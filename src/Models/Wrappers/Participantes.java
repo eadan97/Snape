@@ -53,7 +53,7 @@ public class Participantes {
     public boolean verificarEstudiante(Participante participanteVerificado){
         for (Participante participanteVerificar:
              getLista()) {
-            if (participanteVerificado.getCorreo()==participanteVerificar.getCorreo())
+            if (participanteVerificado.getCorreo().equals(participanteVerificar.getCorreo()))
                 return true;
         }
         return false;

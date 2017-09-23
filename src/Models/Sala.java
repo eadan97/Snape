@@ -121,7 +121,7 @@ public class Sala {
 
     }
 
-    public void setCalificaciones(ArrayList calificaciones) {
+    public void setCalificaciones(ArrayList<Calificacion> calificaciones) {
         this.calificaciones = calificaciones;
     }
 
@@ -133,7 +133,7 @@ public class Sala {
 
     public boolean existeCalificacion(String codigo) {
         for (Calificacion calificacion:calificaciones) {
-            if (codigo==calificacion.codigo)
+            if (codigo.equals(calificacion.codigo))
                 return true;
         }
         return false;

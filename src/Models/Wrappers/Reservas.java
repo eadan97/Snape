@@ -47,20 +47,6 @@ public class Reservas {
             lista.add(nueva);
     }
 
-    //TODO: Arreglar esto, seria por fecha diferente y sala diferente
-    /**
-     * Verifica si el participante tiene un CORREO diferente.
-     * @param participanteVerificado Estudiante que se busca en la lista.
-     * @return
-     */
-    public boolean verificarEstudiante(Reserva participanteVerificado){
-        for (Reserva participanteVerificar:
-             getLista()) {
-            //if (participanteVerificado.getCorreo()==participanteVerificar.getCorreo())
-                return true;
-        }
-        return false;
-    }
 
     /**
      * Guarda en un XML la lista de estudiantes

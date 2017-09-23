@@ -17,8 +17,8 @@ public class SalaCalificarController {
         String nota=txtNota.getText();
         if (!Utils.validarCodigoFormato(codigo)
                 ||!Utils.validarNumero(nota)
-                ||!Utils.numeroMayorQue(nota,0)
-                ||!Utils.numeroMenorQue(nota,101))
+                ||Utils.numeroMayorQue(nota,100)
+                ||Utils.numeroMenorQue(nota,1))
         {
             Utils.mostrarError("Error","Error en los datos ingresados","Revise los datos ingresados!");
             return;

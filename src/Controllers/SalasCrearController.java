@@ -54,7 +54,7 @@ public class SalasCrearController {
         if (!Utils.validarNumero(txtCapacidad.getText())
                 ||txtUbicacion.getText().isEmpty()
                 ||txtRecursos.getText().isEmpty()
-                ||!Utils.numeroMayorQue(txtCapacidad.getText(),0)){
+                ||Utils.numeroMenorQue(txtCapacidad.getText(),0)){
             Utils.mostrarError("Error","Error en los datos ingresados","Revise los datos ingresados!");
             return;
         }
