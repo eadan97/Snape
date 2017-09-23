@@ -50,4 +50,13 @@ public class MenuBarController {
             ex.printStackTrace();
         }
     }
+
+    public void menuConsultarEstudiante(ActionEvent actionEvent) {
+        try {
+            Main.getInstance().replaceSceneContent("/Views/JavaFX/consultarEstudiante.fxml");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 }

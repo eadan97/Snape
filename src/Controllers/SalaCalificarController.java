@@ -7,7 +7,7 @@ import Views.Main;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 
-public class CalificarSalaController {
+public class SalaCalificarController {
 
     public TextField txtCodigo;
     public TextField txtNota;

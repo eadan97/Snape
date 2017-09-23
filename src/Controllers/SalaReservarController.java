@@ -16,7 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.ArrayList;
 
-public class ReservarSalaController {
+public class SalaReservarController {
     public TableView tblParticipantes;
     public TableColumn tbcNombre;
     public TableColumn tbcCorreo;

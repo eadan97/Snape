@@ -124,4 +124,13 @@ public class Reservas {
         }
         return res;
     }
+
+    public ArrayList<Reserva> reservasEstudiante(int carnet) {
+        ArrayList<Reserva> res=new ArrayList<>();
+        for (Reserva reserva:lista) {
+            if (reserva.getIdOrganizador()==carnet)
+                res.add(reserva);
+        }
+        return res;
+    }
 }

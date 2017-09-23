@@ -5,6 +5,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  * Clase de estudiantes
@@ -12,7 +14,7 @@ import javax.xml.bind.annotation.XmlType;
  * @author Israel Padilla
  * @author Israel
  */
-@XmlType(propOrder = {"nombre","carrera","correo","telefono","calificacion"})
+@XmlType(propOrder = {"nombre","carrera","correo","telefono","calificacion", "incidentes"})
 @XmlRootElement(name = "estudiante")
 public class Estudiante {
     private String nombre;
@@ -21,6 +23,7 @@ public class Estudiante {
     private String correo;
     private int telefono;
     private int calificacion=100;
+    private ArrayList<Incidente> incidentes=new ArrayList<>();
 
     public Estudiante(){}
 
@@ -30,6 +33,24 @@ public class Estudiante {
         this.carrera = carrera;
         this.correo = correo;
         this.telefono = telefono;
+    }
+
+    @XmlElement
+    public ArrayList<Incidente> getIncidentes() {
+        return incidentes;
+    }
+
+    public void setIncidentes(ArrayList<Incidente> pIncidentes) {
+        incidentes = pIncidentes;
+    }
+
+    public void agregarIncidencia(String tipo, String idSala, LocalDate fecha, String detalle){
+        if (tipo.equals("Sala reservada no utilizada")
+                ||tipo.equals("Ruido excesivo")
+                ||tipo.equals("Basura y desorden")){
+            //TODO TERMINAR INCIDENCIA Y EXCEPCIONES.
+
+        }
     }
 
     @XmlElement
@@ -82,7 +103,8 @@ public class Estudiante {
         this.calificacion = calificacion;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return nombre + " - " + carnet;
+    }
 }

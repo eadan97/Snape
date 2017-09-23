@@ -20,7 +20,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class CrearSalasController {
+public class SalasCrearController {
     public TableColumn tbcId;
     public TableColumn tbcUbicacion;
     public TableColumn tbcCapacidad;

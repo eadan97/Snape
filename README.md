@@ -4,12 +4,15 @@ Agregar descripcion
 _**WIP**_
 
 ### Camino
+
+**Falta arreglar nombre de los FXML**
+
 * **[DONE]** Requerimiento ​ 1
-* Requerimiento ​ 2
+* **[WIP]** Requerimiento ​ 2 - Falta Testing - Falta Incidentes -
 * **[DONE]** Requerimiento ​ 3
 * **[DONE]** Requerimiento ​ 4
 * **[WIP]** Requerimiento ​ 5 - Falta Testing - Falta SMS*implementacion -
-* **[WIP]** Requerimiento ​ 6 -Falta Testing
+* **[WIP]** Requerimiento ​ 6 -Falta Testing - Falta excepciones -
 * **[WIP]** Requerimiento ​ 7
 * Requerimiento ​ 8
 

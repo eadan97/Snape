@@ -14,7 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.ArrayList;
 
-public class ConsultarSalasController {
+public class SalasConsultarController {
     public ComboBox cBoxSalas;
     public TableView tblSalas;
     public TableColumn tbcSalasUbicacion;
@@ -90,7 +90,6 @@ public class ConsultarSalasController {
         tbcReservaFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
         tbcReservaInicio.setCellValueFactory(new PropertyValueFactory<>("horaInicio"));
         tbcReservaFin.setCellValueFactory(new PropertyValueFactory<>("HoraFin"));
-
         tbcReservaParticipantes.setCellValueFactory(new PropertyValueFactory<>("cantidadParticipantes"));
 
 

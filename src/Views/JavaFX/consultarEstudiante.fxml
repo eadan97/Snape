@@ -2,7 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ConsultarSalasController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EstudianteConsultarController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -13,9 +13,9 @@
   </rowConstraints>
     <children>
         <fx:include source="menuBar.fxml" GridPane.columnSpan="2147483647" GridPane.valignment="TOP" />
-      <TitledPane animated="false" collapsible="false" contentDisplay="RIGHT" prefHeight="500.0" prefWidth="200.0" snapToPixel="false" text="Sala: " GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+      <TitledPane animated="false" collapsible="false" contentDisplay="RIGHT" prefHeight="500.0" prefWidth="200.0" snapToPixel="false" text="Estudiante: " GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
          <graphic>
-            <ComboBox fx:id="cBoxSalas" onAction="#salaSeleccionada" prefWidth="150.0" promptText="Sala" />
+            <ComboBox fx:id="cBoxEstudiante" onAction="#estudianteSeleccionado" prefWidth="150.0" promptText="Estudiante" />
          </graphic>
          <content>
             <GridPane>
@@ -29,44 +29,30 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TableView fx:id="tblSalas" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2">
+                  <TableView fx:id="tblEstudiante" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2">
                       <placeholder>
                           <Label text="No hay salas." />
                       </placeholder>
                      <columns>
-                        <TableColumn fx:id="tbcSalasId" editable="false" prefWidth="49.0" text="ID" />
-                        <TableColumn fx:id="tbcSalasUbicacion" editable="false" prefWidth="84.0" text="Ubicacion" />
-                        <TableColumn fx:id="tbcSalasCapacidad" editable="false" prefWidth="75.0" text="Capacidad" />
-                        <TableColumn fx:id="tbcSalasRecursos" editable="false" prefWidth="75.0" text="Recursos" />
-                        <TableColumn fx:id="tbcSalasEstado" editable="false" prefWidth="75.0" text="Estado" />
+                        <TableColumn fx:id="tbcEstudianteCarnet" editable="false" prefWidth="49.0" text="Carnet" />
+                        <TableColumn fx:id="tbcEstudianteNombre" editable="false" prefWidth="84.0" text="Nombre" />
+                        <TableColumn fx:id="tbcEstudianteCarrera" editable="false" prefWidth="75.0" text="Carrera" />
+                        <TableColumn fx:id="tbcEstudianteCorreo" editable="false" prefWidth="75.0" text="Correo" />
                         <TableColumn fx:id="tbcSalasCalificacion" editable="false" text="Calificación" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <TableView fx:id="tblHorarios" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                  <TableView fx:id="tblIncidentes" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
                       <placeholder>
-                          <Label text="No hay horarios." />
-                      </placeholder>
-                    <columns>
-                      <TableColumn fx:id="tbcHorarioDia" prefWidth="75.0" text="Dia" />
-                      <TableColumn fx:id="tbcHorarioInicio" prefWidth="75.0" text="Hora de Inicio" />
-                        <TableColumn fx:id="tbcHorarioFin" prefWidth="75.0" text="Hora de Fin" />
-                    </columns>
-                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                     </columnResizePolicy>
-                  </TableView>
-                  <TableView fx:id="tblExcepciones" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                      <placeholder>
-                          <Label text="No hay excepciones." />
+                          <Label text="No hay incidentes." />
                       </placeholder>
                      <columns>
-                        <TableColumn fx:id="tbcExcepcionNombre" prefWidth="75.0" text="Excepcion" />
-                        <TableColumn fx:id="tbcExcepcionDia" prefWidth="75.0" text="Dia" />
-                        <TableColumn fx:id="tbcExcepcionInicio" prefWidth="75.0" text="Hora de Inicio" />
-                        <TableColumn fx:id="tbcExcepcionFin" prefWidth="75.0" text="Hora de Fin" />
+                        <TableColumn fx:id="tbcExcepcionNombre" editable="false" prefWidth="75.0" text="Incidente" />
+                        <TableColumn fx:id="tbcExcepcionSala" editable="false" prefWidth="75.0" text="Sala" />
+                        <TableColumn fx:id="tbcExcepcionFecha" editable="false" prefWidth="75.0" text="Fecha" />
+                        <TableColumn fx:id="tbcExcepcionDetalle" editable="false" prefWidth="75.0" text="Detalle" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -77,14 +63,14 @@
                           <Label text="No hay reservas." />
                       </placeholder>
                      <columns>
-                        <TableColumn fx:id="tbcReservaId" prefWidth="75.0" text="Id" />
-                        <TableColumn fx:id="tbcReservaAsunto" prefWidth="75.0" text="Asunto" />
-                        <TableColumn fx:id="tbcReservaOrganizador" prefWidth="75.0" text="Organizador" />
-                        <TableColumn fx:id="tbcReservaEstado" prefWidth="75.0" text="Estado" />
-                        <TableColumn fx:id="tbcReservaFecha" prefWidth="75.0" text="Fecha" />
-                        <TableColumn fx:id="tbcReservaInicio" prefWidth="75.0" text="Inicio" />
-                        <TableColumn fx:id="tbcReservaFin" prefWidth="75.0" text="Fin" />
-                        <TableColumn fx:id="tbcReservaParticipantes" prefWidth="75.0" text="Participantes" />
+                        <TableColumn fx:id="tbcReservaId" editable="false" prefWidth="75.0" text="Id" />
+                        <TableColumn fx:id="tbcReservaAsunto" editable="false" prefWidth="75.0" text="Asunto" />
+                        <TableColumn fx:id="tbcReservaOrganizador" editable="false" prefWidth="75.0" text="Organizador" />
+                        <TableColumn fx:id="tbcReservaEstado" editable="false" prefWidth="75.0" text="Estado" />
+                        <TableColumn fx:id="tbcReservaFecha" editable="false" prefWidth="75.0" text="Fecha" />
+                        <TableColumn fx:id="tbcReservaInicio" editable="false" prefWidth="75.0" text="Inicio" />
+                        <TableColumn fx:id="tbcReservaFin" editable="false" prefWidth="75.0" text="Fin" />
+                        <TableColumn fx:id="tbcReservaParticipantes" editable="false" prefWidth="75.0" text="Participantes" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
