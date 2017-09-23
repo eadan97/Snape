@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * Esta clase sirve de contenedor de los estudiantes, ademas es necesaria para la JABX.
  *
  * @author Esteban Esquivel
+ * @author Israel Herrera
  * @author Israel Padilla
- * @author Israel
  */
 
 @XmlRootElement(name = "estudiantes")
@@ -47,8 +47,8 @@ public class Estudiantes {
 
     /**
      * Verifica si el estudiante se encuentra en la lista.
-     * @param estudianteVerificado Estudiante que se busca en la lista.
-     * @return
+     * @param estudianteVerificado Carnet del estudiante que se busca en la lista.
+     * @return Booleano: Está en la lista?
      */
     public boolean verificarCarnet(int estudianteVerificado){
         for (Estudiante estudianteVerificar:
@@ -60,7 +60,7 @@ public class Estudiantes {
     }
 
     /**
-     * Guarda en un XML la lista de estudiantes
+     * Guarda en un XML la lista de estudiantes.
      * @throws Exception
      */
     public void saveInXML() throws Exception {
@@ -75,7 +75,7 @@ public class Estudiantes {
     }
 
     /**
-     * Carga de un XML la lista de estudiantes
+     * Carga de un XML la lista de estudiantes.
      * @throws JAXBException
      */
     public void loadFromXML() throws JAXBException {
@@ -88,7 +88,4 @@ public class Estudiantes {
         setLista(estudiantes.getLista());
     }
 
-    public ArrayList<Estudiante> getEstudiantesElegibles() {
-        return null;
-    }
 }

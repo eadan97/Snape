@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * Esta clase sirve de contenedor de los horarios, ademas es necesaria para la JABX.
  *
  * @author Esteban Esquivel
- * @author Israel Padilla
  * @author Israel Herrera
+ * @author Israel Padilla
  */
 
 @XmlRootElement(name = "horarios")
@@ -39,7 +39,7 @@ public class Horarios {
 
 
     /**
-     * Guarda en un XML la lista de estudiantes
+     * Guarda en un XML la lista de horarios.
      * @throws Exception
      */
     public void saveInXML() throws Exception {
@@ -54,7 +54,7 @@ public class Horarios {
     }
 
     /**
-     * Carga de un XML la lista de estudiantes
+     * Carga de un XML la lista de horarios.
      * @throws JAXBException
      */
     public void loadFromXML() throws Exception {

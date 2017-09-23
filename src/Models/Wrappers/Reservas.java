@@ -18,8 +18,8 @@ import java.util.ArrayList;
  * Esta clase sirve de contenedor de las reservas, ademas es necesaria para la JABX.
  *
  * @author Esteban Esquivel
+ * @author Israel Herrera
  * @author Israel Padilla
- * @author Israel
  */
 
 @XmlRootElement(name = "reservas")
@@ -39,7 +39,7 @@ public class Reservas {
     //Terminan los Getters y Setters
 
     /**
-     * Añade un nueva a la lista de Reserva.
+     * Añade un nueva reserva a la lista de reservas.
      * @param nueva Reserva a añadir.
      */
     public void add(Reserva nueva){
@@ -49,7 +49,7 @@ public class Reservas {
 
 
     /**
-     * Guarda en un XML la lista de estudiantes
+     * Guarda en un XML la lista de reservas.
      * @throws Exception
      */
     public void saveInXML() throws Exception {
@@ -64,7 +64,7 @@ public class Reservas {
     }
 
     /**
-     * Carga de un XML la lista de estudiantes
+     * Carga de un XML la lista de reservas.
      * @throws JAXBException
      */
     public void loadFromXML() throws Exception {
@@ -81,16 +81,32 @@ public class Reservas {
             saveInXML();}
     }
 
+    /**
+     * TODO:MOVER ESTO A ESTUDIANTE.
+     * @param estudiante
+     * @return
+     */
     public int cantidadIncidenciasEstudiante(Estudiante estudiante) {
         //TODO: Terminar
         return 0;
     }
 
+    /**
+     * Devuelve las reservas semanales de un estudiante.
+     * @param estudiante Estudiante a buscar.
+     * @return Cantidad de reservas.
+     */
     public int reservarSemanalesEstudiante(Estudiante estudiante) {
+        //TODO: Cambiar parametro a int
         //TODO: Terminar
         return 0;
     }
 
+    /**
+     * Retorna las reservas de una sala.
+     * @param id Sala a buscar
+     * @return Lista de reservas de la sala
+     */
     public ArrayList<Reserva> reservasSala(String id) {
         ArrayList<Reserva> res=new ArrayList<>();
         for (Reserva reserva:lista) {
@@ -100,6 +116,11 @@ public class Reservas {
         return res;
     }
 
+    /**
+     * Retorna las reservas de una sala en una semana adelante.
+     * @param id Sala a buscar.
+     * @return Lista de reservas
+     */
     public ArrayList<Reserva> reservasSalaSemanal(String id) {
         ArrayList<Reserva> res=new ArrayList<>();
         for (Reserva reserva:lista) {
@@ -111,6 +132,11 @@ public class Reservas {
         return res;
     }
 
+    /**
+     * Reservas según el organizador
+     * @param carnet Carnet del estudiante organizador
+     * @return Lista de reservas
+     */
     public ArrayList<Reserva> reservasEstudiante(int carnet) {
         ArrayList<Reserva> res=new ArrayList<>();
         for (Reserva reserva:lista) {

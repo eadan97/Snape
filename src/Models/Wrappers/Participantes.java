@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * Esta clase sirve de contenedor de los participantes, ademas es necesaria para la JABX.
  *
  * @author Esteban Esquivel
+ * @author Israel Herrera
  * @author Israel Padilla
- * @author Israel
  */
 
 @XmlRootElement(name = "participantes")
@@ -60,7 +60,7 @@ public class Participantes {
     }
 
     /**
-     * Guarda en un XML la lista de estudiantes
+     * Guarda en un XML la lista de participantes.
      * @throws Exception
      */
     public void saveInXML() throws Exception {
@@ -75,7 +75,7 @@ public class Participantes {
     }
 
     /**
-     * Carga de un XML la lista de estudiantes
+     * Carga de un XML la lista de participantes.
      * @throws JAXBException
      */
     public void loadFromXML() throws JAXBException {

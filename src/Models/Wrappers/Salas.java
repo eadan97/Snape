@@ -48,7 +48,7 @@ public class Salas {
     /**
      * Verifica id de sala existe.
      * @param salaVerificarId Sala que se busca en la lista.
-     * @return
+     * @return Boolean: Existe?
      */
     public boolean verificarSala(String salaVerificarId){
         for (Sala sala:
@@ -59,6 +59,10 @@ public class Salas {
         return false;
     }
 
+    /**
+     * Devuelve lista de salas activas.
+     * @return ArrayList de Salas
+     */
     public ArrayList<Sala> getSalasActivas(){
         ArrayList<Sala> res =new ArrayList<>();
         for (Sala sala:
@@ -70,7 +74,7 @@ public class Salas {
     }
 
     /**
-     * Guarda en un XML la lista de salas
+     * Guarda en un XML la lista de salas.
      * @throws Exception
      */
     public void saveInXML() throws Exception {
@@ -85,7 +89,7 @@ public class Salas {
     }
 
     /**
-     * Carga de un XML la lista de salas
+     * Carga de un XML la lista de salas.
      * @throws JAXBException
      */
     public void loadFromXML() throws Exception {

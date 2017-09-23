@@ -4,7 +4,6 @@ import Models.Estudiante;
 import Models.Wrappers.Estudiantes;
 import Utils.Enums.Carrera;
 import Utils.Utils;
-import Views.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,9 +13,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ * Clase para controlar la ventana para crear estudiantres.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class CrearEstudiantesController extends MenuBarController {
 
-    Estudiantes estudiantes=Main.getInstance().estudiantes;
+    Estudiantes estudiantes=new Estudiantes();
 
     public TableView<Estudiante> tblEstudiantes;
     public TableColumn tbcCarnet;
