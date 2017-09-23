@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
 
-@XmlType(propOrder = {"id","ubicacion","capacidadMaxima","recursos","estado", "calificaciones","agendaServicio"})
+@XmlType(propOrder = {"id","ubicacion","capacidadMaxima","recursos","estado","calificacion","agendaServicio"})
 public class Sala {
     private static int cantidadSalas=0;
 
@@ -13,7 +13,7 @@ public class Sala {
     private int capacidadMaxima;
     private String recursos;
     private String estado="Activa";//TODO: Passarlo a un enum?
-    private ArrayList<Calificacion> calificaciones =new ArrayList<>();
+    private int calificacion=100;
     private ArrayList<Horario> agendaServicio=new ArrayList<>();
 
     public Sala( String ubicacion, int capacidadMaxima, String recursos) {
@@ -107,40 +107,11 @@ public class Sala {
     }
 
     @XmlElement
-    public int getCalificaciones() {
-        if (calificaciones.isEmpty())
-            return 100;
-        else{
-            int res=0;
-            for (Calificacion calificacion:
-                    calificaciones) {
-                res+=calificacion.nota;
-            }
-            return res/calificaciones.size();
-        }
-
+    public int getCalificacion() {
+        return calificacion;
     }
 
-    public void setCalificaciones(ArrayList calificaciones) {
-        this.calificaciones = calificaciones;
-    }
-
-    public void agregarCalificacion(int nota, String codigo){
-        if (!existeCalificacion(codigo))
-            calificaciones.add(new Calificacion(nota, codigo));
-
-    }
-
-    public boolean existeCalificacion(String codigo) {
-        for (Calificacion calificacion:calificaciones) {
-            if (codigo==calificacion.codigo)
-                return true;
-        }
-        return false;
-    }
-
-    @Override
-    public String toString() {
-        return "Sala " + id;
+    public void setCalificacion(int calificacion) {
+        this.calificacion = calificacion;
     }
 }

@@ -19,32 +19,10 @@ public class Utils {
 
         alert.showAndWait();
     }
-
-    /**
-     * Metodo que revisa si la hora del medio esta entre inicio y fin
-     * @param inicio
-     * @param medio
-     * @param fin
-     * @return
-     */
     public static boolean estaEnMedio(LocalTime inicio, LocalTime medio, LocalTime fin){
         if (medio.compareTo(inicio)>=0&&medio.compareTo(fin)<=0){
             return true;
         }
         return false;
-    }
-    public static boolean numeroMayorQue(String string, int numero){
-        if (validarNumero(string))
-            return Integer.parseInt(string)>numero;
-        else
-            return false;
-    }
-    public static boolean numeroMenorQue(String string, int numero){
-
-        return Integer.parseInt(string)<numero;
-    }
-
-    public static boolean validarCodigoFormato(String text) {
-        return text.matches("SAL-\\d+-\\d+-\\d+");
     }
 }
