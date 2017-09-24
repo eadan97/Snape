@@ -114,7 +114,7 @@ public class Sala {
             int res=0;
             for (Calificacion calificacion:
                     calificaciones) {
-                res+=calificacion.nota;
+                res+=calificacion.getNota();
             }
             return res/calificaciones.size();
         }
@@ -133,7 +133,7 @@ public class Sala {
 
     public boolean existeCalificacion(String codigo) {
         for (Calificacion calificacion:calificaciones) {
-            if (codigo.equals(calificacion.codigo))
+            if (codigo.equals(calificacion.getCodigo()))
                 return true;
         }
         return false;

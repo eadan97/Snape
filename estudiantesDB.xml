@@ -56,4 +56,18 @@
         <telefono>231</telefono>
         <calificacion>100</calificacion>
     </estudiante>
+    <estudiante carnet="98978987">
+        <nombre>sdf</nombre>
+        <carrera>ADMINISTRACION_DE_EMPRESAS</carrera>
+        <correo>asd@asd.sa</correo>
+        <telefono>654</telefono>
+        <calificacion>100</calificacion>
+    </estudiante>
+    <estudiante carnet="2017">
+        <nombre>Israel Herrera</nombre>
+        <carrera>ADMINISTRACION_DE_EMPRESAS</carrera>
+        <correo>cosa@cosa.com</correo>
+        <telefono>83666575</telefono>
+        <calificacion>100</calificacion>
+    </estudiante>
 </estudiantes>

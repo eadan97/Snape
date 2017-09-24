@@ -5,64 +5,25 @@
         <ubicacion>test2</ubicacion>
         <capacidadMaxima>432</capacidadMaxima>
         <recursos>TEST</recursos>
-        <estado>Inactiva</estado>
+        <estado>Activa</estado>
         <calificaciones>100</calificaciones>
         <agendaServicio>
-            <dia>TUESDAY</dia>
+            <dia>MONDAY</dia>
             <inicio>00:00</inicio>
             <fin>01:00</fin>
         </agendaServicio>
     </sala>
     <sala>
         <id>SAL-2</id>
-        <ubicacion>asd</ubicacion>
-        <capacidadMaxima>2</capacidadMaxima>
-        <recursos>d</recursos>
+        <ubicacion>test2</ubicacion>
+        <capacidadMaxima>432</capacidadMaxima>
+        <recursos>TEST</recursos>
         <estado>Activa</estado>
         <calificaciones>100</calificaciones>
         <agendaServicio>
-            <dia>TUESDAY</dia>
+            <dia>MONDAY</dia>
             <inicio>00:00</inicio>
             <fin>01:00</fin>
         </agendaServicio>
-        <agendaServicio>
-            <dia>TUESDAY</dia>
-            <inicio>02:00</inicio>
-            <fin>03:00</fin>
-        </agendaServicio>
-    </sala>
-    <sala>
-        <id>SAL-3</id>
-        <ubicacion>dfg</ubicacion>
-        <capacidadMaxima>3</capacidadMaxima>
-        <recursos>df</recursos>
-        <estado>Activa</estado>
-        <calificaciones>100</calificaciones>
-        <agendaServicio>
-            <dia>TUESDAY</dia>
-            <inicio>00:00</inicio>
-            <fin>01:00</fin>
-        </agendaServicio>
-    </sala>
-    <sala>
-        <id>SAL-4</id>
-        <ubicacion>sdf</ubicacion>
-        <capacidadMaxima>32</capacidadMaxima>
-        <recursos>df</recursos>
-        <estado>Activa</estado>
-        <calificaciones>100</calificaciones>
-        <agendaServicio>
-            <dia>TUESDAY</dia>
-            <inicio>00:00</inicio>
-            <fin>01:00</fin>
-        </agendaServicio>
-    </sala>
-    <sala>
-        <id>SAL-5</id>
-        <ubicacion>asd</ubicacion>
-        <capacidadMaxima>2</capacidadMaxima>
-        <recursos>www</recursos>
-        <estado>Activa</estado>
-        <calificaciones>100</calificaciones>
     </sala>
 </salas>

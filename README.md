@@ -8,12 +8,12 @@ _**WIP**_
 **Falta arreglar nombre de los FXML**
 
 * **[DONE]** Requerimiento ​ 1
-* **[WIP]** Requerimiento ​ 2 - Falta Testing - Falta Incidentes -
+* **[DONE]** Requerimiento ​ 2 - Falta Incidentes -
 * **[DONE]** Requerimiento ​ 3
 * **[DONE]** Requerimiento ​ 4
-* **[WIP]** Requerimiento ​ 5 - Falta Testing - Falta SMS*implementacion -
-* **[WIP]** Requerimiento ​ 6 -Falta Testing - Falta excepciones -
-* **[WIP]** Requerimiento ​ 7
+* **[DONE]** Requerimiento ​ 5 
+* **[DONE]** Requerimiento ​ 6 - Falta excepciones -
+* **[WIP]** Requerimiento ​ 7 - Falta correo -
 * Requerimiento ​ 8
 
 ## Autor(es)

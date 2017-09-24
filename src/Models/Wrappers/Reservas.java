@@ -42,9 +42,10 @@ public class Reservas {
      * Añade un nueva reserva a la lista de reservas.
      * @param nueva Reserva a añadir.
      */
-    public void add(Reserva nueva){
+    public void agregar(Reserva nueva){
         //if (!verificarEstudiante(nueva))
             lista.add(nueva);
+
     }
 
 
@@ -77,6 +78,7 @@ public class Reservas {
 
             Reservas lista = (Reservas)jaxbUnmarshaller.unmarshal( file );
             setLista(lista.getLista());
+            Reserva.setCantReservas(lista.getLista().size());
         }catch (Exception e){
             saveInXML();}
     }
@@ -96,7 +98,7 @@ public class Reservas {
      * @param estudiante Estudiante a buscar.
      * @return Cantidad de reservas.
      */
-    public int reservarSemanalesEstudiante(Estudiante estudiante) {
+    public int reservasSemanalesEstudiante(Estudiante estudiante) {
         //TODO: Cambiar parametro a int
         //TODO: Terminar
         return 0;

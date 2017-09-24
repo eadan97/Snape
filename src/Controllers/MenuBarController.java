@@ -35,7 +35,7 @@ public class MenuBarController {
 
     public void menuReservarSala(ActionEvent actionEvent) {
         try {
-            Main.getInstance().replaceSceneContent("/Views/JavaFX/calificarSala.fxml");
+            Main.getInstance().replaceSceneContent("/Views/JavaFX/reservarSala.fxml");
 
         } catch (Exception ex) {
             ex.printStackTrace();
