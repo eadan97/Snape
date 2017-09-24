@@ -4,6 +4,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+/**
+ * Clase de participante.
+ *
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 @XmlType(propOrder = {"nombre","correo"})
 @XmlRootElement(name = "participante")
 public class Participante {

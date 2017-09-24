@@ -11,6 +11,13 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
+/**
+ * Clase de reserva.
+ *
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 @XmlType(propOrder = {"id","idSala","idOrganizador","asunto","estado","fecha","horaInicio","horaFin","participantes"})
 @XmlRootElement(name = "reserva")
 public class Reserva {
@@ -136,6 +143,10 @@ public class Reserva {
         this.horaFin = horaFin;
     }
 
+    /**
+     * Retorna la cantidad de participantes.
+     * @return Cantidad de participantes.
+     */
     public int getCantidadParticipantes(){
         return participantes.size();
     }

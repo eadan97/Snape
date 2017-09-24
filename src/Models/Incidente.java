@@ -7,6 +7,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
+/**
+ * Clase de incidente.
+ *
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 @XmlRootElement(name = "incidente")
 public class Incidente {
     private String tipo;

@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * Esta clase sirve de contenedor de los participantes, ademas es necesaria para la JABX.
  *
  * @author Esteban Esquivel
+ * @author Israel Herrera
  * @author Israel Padilla
- * @author Israel
  */
 
 @XmlRootElement(name = "salas")

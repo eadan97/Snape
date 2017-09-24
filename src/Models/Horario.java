@@ -9,8 +9,14 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 
+/**
+ * Clase de horario.
+ *
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 @XmlType(propOrder = {"dia","inicio","fin"})
-
 @XmlRootElement(name = "horario")
 public class Horario {
     private DayOfWeek dia;

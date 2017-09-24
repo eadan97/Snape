@@ -1,5 +1,12 @@
 package Utils.Enums;
 
+/**
+ * Carreras (actualmente solo de Cartago)
+ *
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public enum Carrera {
     ADMINISTRACION_DE_EMPRESAS,
     ENSENIANZA_DE_LA_MATEMATICA_CON_ENTORNOS_TECNOLOGICOS,

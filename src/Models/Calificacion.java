@@ -3,10 +3,17 @@ package Models;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Clase de calificacion.
+ *
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 @XmlRootElement(name = "calificacion")
 public class Calificacion {
-    int nota;
-    String codigo;
+    private int nota;
+    private String codigo;
 
     public Calificacion() {
     }

@@ -11,8 +11,8 @@ import java.util.ArrayList;
 /**
  * Clase de estudiantes
  * @author Esteban Esquivel
+ * @author Israel Herrera
  * @author Israel Padilla
- * @author Israel
  */
 @XmlType(propOrder = {"nombre","carrera","correo","telefono","calificacion", "incidentes"})
 @XmlRootElement(name = "estudiante")
@@ -44,6 +44,13 @@ public class Estudiante {
         incidentes = pIncidentes;
     }
 
+    /**
+     * Metodo para agregar incidencias.
+     * @param tipo Tipo de incidencia
+     * @param idSala Id de la sala.
+     * @param fecha Fecha de la incidencia.
+     * @param detalle Detalle de la incidencia.
+     */
     public void agregarIncidencia(String tipo, String idSala, LocalDate fecha, String detalle){
         if (tipo.equals("Sala reservada no utilizada")
                 ||tipo.equals("Ruido excesivo")
