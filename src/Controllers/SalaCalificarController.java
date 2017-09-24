@@ -12,7 +12,7 @@ public class SalaCalificarController {
     public TextField txtCodigo;
     public TextField txtNota;
 
-    public void calificarSala(ActionEvent actionEvent) {
+    public void calificarSala(ActionEvent actionEvent) throws Exception {
         String codigo=txtCodigo.getText();
         String nota=txtNota.getText();
         if (!Utils.validarCodigoFormato(codigo)
@@ -29,10 +29,12 @@ public class SalaCalificarController {
         int idEstudiante=Integer.parseInt(codigoPicado[3]);
         if (validarCodigo(idSala,idReserva,idEstudiante)) {
             for (Sala sala : Main.getInstance().salas.getLista()) {
-                sala.agregarCalificacion(Integer.parseInt(nota), codigo);
+                if (sala.getId().equals(idSala))
+                    sala.agregarCalificacion(Integer.parseInt(nota), codigo);
             }
             txtCodigo.setText("");
             txtNota.setText("");
+            Main.getInstance().salas.saveInXML();
         }else {
             Utils.mostrarError("Error","Error en los datos ingresados","Revise los datos ingresados!");
         }

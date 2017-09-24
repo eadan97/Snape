@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Clase de reserva.
@@ -27,7 +27,7 @@ public class Reserva {
     String idSala;
     int idOrganizador;
     String estado;
-    List<Participante> participantes;
+    ArrayList<Participante> participantes;
     LocalDate fecha;
     LocalTime horaInicio;
     LocalTime horaFin;
@@ -38,13 +38,14 @@ public class Reserva {
     //TODO: Revisar si la fecha esta bien y/o exportarla a otra clase
 
 
-    public Reserva(String asunto, String idSala, String estado, List<Participante> participantes, LocalDate fecha, LocalTime horaInicio, LocalTime horaFin) {
+    public Reserva(String asunto, int idOrganizador, String idSala, String estado, ArrayList<Participante> participantes, LocalDate fecha, LocalTime horaInicio, LocalTime horaFin) {
         cantReservas++;
         this.id=cantReservas;
+        this.idOrganizador=idOrganizador;
         this.asunto = asunto;
         this.idSala = idSala;
         this.estado = estado;
-        this.participantes = participantes;
+        this.participantes = new ArrayList<>(participantes);
         this.fecha = fecha;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
@@ -104,11 +105,11 @@ public class Reserva {
     }
 
     @XmlElement
-    public List<Participante> getParticipantes() {
+    public ArrayList<Participante> getParticipantes() {
         return participantes;
     }
 
-    public void setParticipantes(List<Participante> participantes) {
+    public void setParticipantes(ArrayList<Participante> participantes) {
         this.participantes = participantes;
     }
 

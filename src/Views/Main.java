@@ -31,7 +31,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws Exception{
-        //estudiantes.add(new Estudiante("asd",123456,"carrera","correo",12345));
+        //estudiantes.agregar(new Estudiante("asd",123456,"carrera","correo",12345));
         launch(args);
 
 
@@ -68,7 +68,7 @@ public class Main extends Application {
         Scene scene = stage.getScene();
         if (scene == null) {
             scene = new Scene(page, 800, 500);
-            //scene.getStylesheets().add(getClass().getResource("demo.css").toExternalForm());
+            //scene.getStylesheets().agregar(getClass().getResource("demo.css").toExternalForm());
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);
