@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<salas>
+    <sala>
+        <id>SAL-1</id>
+        <ubicacion>test2</ubicacion>
+        <capacidadMaxima>432</capacidadMaxima>
+        <recursos>TEST</recursos>
+        <estado>Activa</estado>
+        <calificaciones>100</calificaciones>
+        <agendaServicio>
+            <dia>MONDAY</dia>
+            <inicio>00:00</inicio>
+            <fin>01:00</fin>
+        </agendaServicio>
+    </sala>
+    <sala>
+        <id>SAL-2</id>
+        <ubicacion>test2</ubicacion>
+        <capacidadMaxima>432</capacidadMaxima>
+        <recursos>TEST</recursos>
+        <estado>Activa</estado>
+        <calificaciones>100</calificaciones>
+        <agendaServicio>
+            <dia>MONDAY</dia>
+            <inicio>00:00</inicio>
+            <fin>01:00</fin>
+        </agendaServicio>
+    </sala>
+</salas>
