@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<horarios>
+    <horario>
+    <dia>TUESDAY</dia>
+    <inicio>00:00</inicio>
+    <fin>01:00</fin>
+</horario>
+    <horario>
+        <dia>TUESDAY</dia>
+        <inicio>02:00</inicio>
+        <fin>03:00</fin>
+    </horario>
+</horarios>
+
