@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HorarioController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints fillHeight="false" vgrow="NEVER" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <!--fx:include source="menuBar.fxml" GridPane.columnSpan="2147483647" GridPane.valignment="TOP" /-->
+        <TitledPane fx:id="tpnHorarios" animated="false" collapsible="false" contentDisplay="RIGHT" graphicTextGap="10.0" prefHeight="1000.0" text="Salas" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS">
+            <content>
+                <TableView fx:id="tblHorarios" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                        <TableColumn fx:id="tbcDia" prefWidth="100.0" text="Dia" />
+                        <TableColumn fx:id="tbcInicio" prefWidth="100.0" text="Inicio" />
+                        <TableColumn fx:id="tbcFin" prefWidth="100.0" text="Fin" />
+                    </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+                </TableView>
+            </content>
+        </TitledPane>
+        <TitledPane animated="false" collapsible="false" prefHeight="1000.0" text="Nuevo" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
+            <content>
+                <GridPane prefHeight="200.0" prefWidth="200.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="ALWAYS" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Horario" />
+                        <Button mnemonicParsing="false" onAction="#agregarHorario" text="Agregar" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cBoxHorarios" prefHeight="25.0" prefWidth="362.0" promptText="Horario" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" />
+                  <Button fx:id="btnEnviar" mnemonicParsing="false" onAction="#enviarHorario" text="Enviar" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
+                  <Button mnemonicParsing="false" onAction="#eliminarHorario" text="Eliminar" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                    </children>
+                </GridPane>
+            </content>
+        </TitledPane>
+    </children>
+</GridPane>
