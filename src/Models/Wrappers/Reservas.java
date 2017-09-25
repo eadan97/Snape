@@ -10,6 +10,7 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.File;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -89,7 +90,7 @@ public class Reservas {
      * @return
      */
     public int cantidadIncidenciasEstudiante(Estudiante estudiante) {
-        //TODO: Terminar
+        //TODO: Terminar esto
         return 0;
     }
 
@@ -99,9 +100,16 @@ public class Reservas {
      * @return Cantidad de reservas.
      */
     public int reservasSemanalesEstudiante(Estudiante estudiante) {
-        //TODO: Cambiar parametro a int
-        //TODO: Terminar
-        return 0;
+        int res=0;
+        ArrayList<Reserva> salas=new ArrayList<>();
+        for (Reserva reserva:lista) {
+            if (reserva.getIdOrganizador()==estudiante.getCarnet()
+                    &&reserva.getFecha().isBefore(LocalDate.now().with(DayOfWeek.MONDAY).plusWeeks(1))
+                    &&reserva.getFecha().isAfter(LocalDate.now().with(DayOfWeek.MONDAY)))
+                res++;
+        }
+
+        return res;
     }
 
     /**

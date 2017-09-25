@@ -35,8 +35,6 @@ public class Reserva {
     public Reserva() {
     }
 
-    //TODO: Revisar si la fecha esta bien y/o exportarla a otra clase
-
 
     public Reserva(String asunto, int idOrganizador, String idSala, String estado, ArrayList<Participante> participantes, LocalDate fecha, LocalTime horaInicio, LocalTime horaFin) {
         cantReservas++;

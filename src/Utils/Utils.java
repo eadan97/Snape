@@ -1,8 +1,17 @@
 package Utils;
 
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.Chart;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 
 import java.time.LocalTime;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Clase con metodos utiles.
@@ -97,4 +106,33 @@ public class Utils {
     public static boolean validarCodigoFormato(String codigo) {
         return codigo.matches("SAL-\\d+-\\d+-\\d+");
     }
+
+
+
+    public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
+        return map.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue(Collections.reverseOrder()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (e1, e2) -> e1,
+                        LinkedHashMap::new
+                ));
+    }
+
+    public static void poblarChart(BarChart grpGrafico, Iterator iterator, String barra){
+        int i=0;
+        while (iterator.hasNext()&&i<6){
+            Map.Entry entry = (Map.Entry) iterator.next();
+            i++;
+
+            XYChart.Series series = new XYChart.Series<>();
+            series.setName(entry.getKey().toString());
+            series.getData().add(new XYChart.Data<>(barra, entry.getValue()));
+
+            grpGrafico.getData().add(series);
+        }
+    }
+
 }

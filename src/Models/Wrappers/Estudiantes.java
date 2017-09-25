@@ -45,6 +45,15 @@ public class Estudiantes {
             lista.add(estudiante);
     }
 
+    public Estudiante estudiantePorId(int id){
+        for (Estudiante estudiante :
+                lista) {
+            if (estudiante.getCarnet()==id)
+                return estudiante;
+        }
+        return null;
+    }
+
     /**
      * Verifica si el estudiante se encuentra en la lista.
      * @param estudianteVerificado Carnet del estudiante que se busca en la lista.
@@ -78,14 +87,18 @@ public class Estudiantes {
      * Carga de un XML la lista de estudiantes.
      * @throws JAXBException
      */
-    public void loadFromXML() throws JAXBException {
-        File file = new File( "estudiantesDB.xml" );
-        JAXBContext jaxbContext = JAXBContext.newInstance( Estudiantes.class );
+    public void loadFromXML() throws Exception {
+        try {
+            File file = new File("estudiantesDB.xml");
+            JAXBContext jaxbContext = JAXBContext.newInstance(Estudiantes.class);
 
-        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
-        Estudiantes estudiantes = (Estudiantes)jaxbUnmarshaller.unmarshal( file );
-        setLista(estudiantes.getLista());
+            Estudiantes estudiantes = (Estudiantes) jaxbUnmarshaller.unmarshal(file);
+            setLista(estudiantes.getLista());
+        }catch (Exception e){
+            saveInXML();
+        }
     }
 
 }

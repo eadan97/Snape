@@ -78,14 +78,19 @@ public class Participantes {
      * Carga de un XML la lista de participantes.
      * @throws JAXBException
      */
-    public void loadFromXML() throws JAXBException {
-        File file = new File( "ParticipantesDB.xml" );
-        JAXBContext jaxbContext = JAXBContext.newInstance( Participantes.class );
+    public void loadFromXML() throws Exception {
+        try {
 
-        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            File file = new File( "ParticipantesDB.xml" );
+            JAXBContext jaxbContext = JAXBContext.newInstance( Participantes.class );
 
-        Participantes estudiantes = (Participantes)jaxbUnmarshaller.unmarshal( file );
-        setLista(estudiantes.getLista());
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+
+            Participantes estudiantes = (Participantes)jaxbUnmarshaller.unmarshal( file );
+            setLista(estudiantes.getLista());
+        }catch (Exception e){
+            saveInXML();
+        }
     }
 
 }

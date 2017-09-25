@@ -12,7 +12,7 @@ public class Sala {
     private String ubicacion;
     private int capacidadMaxima;
     private String recursos;
-    private String estado="Activa";//TODO: Passarlo a un enum?
+    private String estado="Activa";
     private ArrayList<Calificacion> calificaciones =new ArrayList<>();
     private ArrayList<Horario> agendaServicio=new ArrayList<>();
 
@@ -107,7 +107,12 @@ public class Sala {
     }
 
     @XmlElement
-    public int getCalificaciones() {
+    public ArrayList<Calificacion> getCalificaciones() {
+        return calificaciones;
+    }
+
+
+    public int getCalificacion() {
         if (calificaciones.isEmpty())
             return 100;
         else{

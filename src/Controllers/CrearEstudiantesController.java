@@ -2,7 +2,6 @@ package Controllers;
 
 import Models.Estudiante;
 import Models.Wrappers.Estudiantes;
-import Utils.Enums.Carrera;
 import Utils.Utils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -34,7 +33,7 @@ public class CrearEstudiantesController extends MenuBarController {
     public TextField txtCarnet;
     public TextField txtCorreo;
     public TextField txtTelefono;
-    public ComboBox cBoxCarrera;
+    public TextField txtCarrera;
 
 
     public void initialize(){
@@ -66,19 +65,19 @@ public class CrearEstudiantesController extends MenuBarController {
                 ||!Utils.validarNumero(txtTelefono.getText())
                 ||!Utils.validarNumero(txtCarnet.getText())
                 ||estudiantes.verificarCarnet(Integer.parseInt(txtCarnet.getText()))
-                ||cBoxCarrera.getValue()==null
+                || txtCarrera.getText().isEmpty()
                 ||txtNombre.getText().isEmpty()){
             Utils.mostrarError("Error","Error en los datos ingresados","Revise los datos ingresados!");
             return;
         }
 
-        Estudiante nuevo = new Estudiante(txtNombre.getText(),Integer.parseInt(txtCarnet.getText()),cBoxCarrera.getValue().toString(),txtCorreo.getText(),Integer.parseInt(txtTelefono.getText()));
+        Estudiante nuevo = new Estudiante(txtNombre.getText(),Integer.parseInt(txtCarnet.getText()), txtCarrera.getText().toString(),txtCorreo.getText(),Integer.parseInt(txtTelefono.getText()));
 
         txtNombre.setText("");
         txtCarnet.setText("");
         txtCorreo.setText("");
         txtTelefono.setText("");
-        cBoxCarrera.setValue(null);
+        txtCarrera.setText("");
 
         estudiantes.add(nuevo);
         estudiantes.saveInXML();
@@ -87,9 +86,7 @@ public class CrearEstudiantesController extends MenuBarController {
 
 
     private void poblarCarreras(){
-        for (Carrera carrera: Carrera.values()) {
-            cBoxCarrera.getItems().add(carrera);
-        }
+
     }
 
 

@@ -13,13 +13,13 @@ _**WIP**_
 * **[DONE]** Requerimiento ​ 4
 * **[DONE]** Requerimiento ​ 5 
 * **[DONE]** Requerimiento ​ 6 - Falta excepciones -
-* **[WIP]** Requerimiento ​ 7 - Falta correo -
-* Requerimiento ​ 8
+* **[DONE]** Requerimiento ​ 7 
+* **[DONE]** Requerimiento ​ 8
 
 ## Autor(es)
 
-* **Esteban Esquivel** - *Initial work* - [eadan97](https://fb.com/eadan97) 
-
+* **Esteban Esquivel** - *Guru* - [eadan97](https://fb.com/eadan97) 
+* **Israel Herrera** - *Reservas, EmailHandler, Chistesillos* - 
 
 ## Hecho con:
 

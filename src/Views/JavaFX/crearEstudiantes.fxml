@@ -58,7 +58,7 @@
                   <Label text="Telefono" GridPane.rowIndex="4" />
                   <TextField fx:id="txtCarnet" GridPane.columnIndex="1" />
                   <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ComboBox fx:id="cBoxCarrera" prefWidth="150.0" promptText="Carrera" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtCarrera"  GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="txtCorreo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="txtTelefono" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Button mnemonicParsing="false" onAction="#agregarEstudiante" text="Agregar" GridPane.columnIndex="1" GridPane.rowIndex="5" />

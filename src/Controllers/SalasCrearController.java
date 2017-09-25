@@ -42,7 +42,7 @@ public class SalasCrearController {
         tbcCapacidad.setCellValueFactory(new PropertyValueFactory<>("capacidadMaxima"));
         tbcRecursos.setCellValueFactory(new PropertyValueFactory<>("recursos"));
         tbcEstado.setCellValueFactory(new PropertyValueFactory<>("estado"));
-        tbcCalificacion.setCellValueFactory(new PropertyValueFactory<>("calificaciones"));
+        tbcCalificacion.setCellValueFactory(new PropertyValueFactory<>("calificacion"));
 
         tbcUbicacion.setCellFactory(TextFieldTableCell.forTableColumn());
         tbcEstado.setCellFactory(TextFieldTableCell.forTableColumn());

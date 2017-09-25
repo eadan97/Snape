@@ -75,7 +75,7 @@ public class SalasConsultarController {
         tbcSalasCapacidad.setCellValueFactory(new PropertyValueFactory<>("capacidadMaxima"));
         tbcSalasRecursos.setCellValueFactory(new PropertyValueFactory<>("recursos"));
         tbcSalasEstado.setCellValueFactory(new PropertyValueFactory<>("estado"));
-        tbcSalasCalificacion.setCellValueFactory(new PropertyValueFactory<>("calificaciones"));
+        tbcSalasCalificacion.setCellValueFactory(new PropertyValueFactory<>("calificacion"));
         tbcHorarioDia.setCellValueFactory(new PropertyValueFactory<>("dia"));
         tbcHorarioInicio.setCellValueFactory(new PropertyValueFactory<>("inicio"));
         tbcHorarioFin.setCellValueFactory(new PropertyValueFactory<>("fin"));

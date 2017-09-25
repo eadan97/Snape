@@ -6,7 +6,14 @@
         <capacidadMaxima>432</capacidadMaxima>
         <recursos>TEST</recursos>
         <estado>Activa</estado>
-        <calificaciones>100</calificaciones>
+        <calificaciones>
+            <codigo>SAL-2-2-999</codigo>
+            <nota>100</nota>
+        </calificaciones>
+        <calificaciones>
+            <codigo>SAL-2-2-999</codigo>
+            <nota>50</nota>
+        </calificaciones>
         <agendaServicio>
             <dia>MONDAY</dia>
             <inicio>00:00</inicio>
@@ -19,11 +26,30 @@
         <capacidadMaxima>432</capacidadMaxima>
         <recursos>TEST</recursos>
         <estado>Activa</estado>
-        <calificaciones>100</calificaciones>
+        <calificaciones>
+            <codigo>SAL-2-2-999</codigo>
+            <nota>50</nota>
+        </calificaciones>
         <agendaServicio>
             <dia>MONDAY</dia>
             <inicio>00:00</inicio>
             <fin>01:00</fin>
+        </agendaServicio>
+    </sala>
+    <sala>
+        <id>SAL-3</id>
+        <ubicacion>test2</ubicacion>
+        <capacidadMaxima>432</capacidadMaxima>
+        <recursos>TEST</recursos>
+        <estado>Activa</estado>
+        <calificaciones>
+            <codigo>SAL-2-2-999</codigo>
+            <nota>80</nota>
+        </calificaciones>
+        <agendaServicio>
+            <dia>MONDAY</dia>
+            <inicio>02:00</inicio>
+            <fin>03:00</fin>
         </agendaServicio>
     </sala>
 </salas>

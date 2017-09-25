@@ -59,4 +59,40 @@ public class MenuBarController {
             ex.printStackTrace();
         }
     }
+
+    public void menuTopSalaUso(ActionEvent actionEvent) {
+        try {
+            Main.getInstance().replaceSceneContent("/Views/JavaFX/topSalaUso.fxml");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void menuTopHorarioUso(ActionEvent actionEvent) {
+        try {
+            Main.getInstance().replaceSceneContent("/Views/JavaFX/topHorarioUso.fxml");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void menuTopCarreraUso(ActionEvent actionEvent) {
+        try {
+            Main.getInstance().replaceSceneContent("/Views/JavaFX/topCarreraUso.fxml");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void menuTopSalaCalificacion(ActionEvent actionEvent) {
+        try {
+            Main.getInstance().replaceSceneContent("/Views/JavaFX/topSalaCalificacion.fxml");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 }

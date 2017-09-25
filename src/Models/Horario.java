@@ -8,6 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 /**
  * Clase de horario.
@@ -62,9 +64,19 @@ public class Horario {
 
     @Override
     public String toString() {
-        return "Horario:" +
-                " " + dia +
-                " " + inicio +
+        return  dia.getDisplayName(TextStyle.FULL,new Locale("es", "ES")) +
+                ": " + inicio +
                 "-" + fin;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Horario){
+            Horario objHorario=(Horario)obj;
+            return objHorario.dia==this.dia
+                    &&objHorario.inicio==this.inicio
+                    &&objHorario.fin==this.fin;
+        }
+        return false;
     }
 }

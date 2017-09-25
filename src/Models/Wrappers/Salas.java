@@ -93,7 +93,6 @@ public class Salas {
      * @throws JAXBException
      */
     public void loadFromXML() throws Exception {
-        //TODO: Hacer el archivo en todas (ver try catch)
         try {
             File file = new File( "salasDB.xml" );
             JAXBContext jaxbContext = JAXBContext.newInstance( Salas.class );

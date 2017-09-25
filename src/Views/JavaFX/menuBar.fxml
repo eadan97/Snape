@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+
 <MenuBar xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MenuBarController">
     <menus>
       <Menu mnemonicParsing="false" text="Graficos">
         <items>
-          <MenuItem mnemonicParsing="false" text="Top de salas mas utilizadas" />
+          <MenuItem mnemonicParsing="false" onAction="#menuTopSalaUso" text="Top de salas por uso" />
+            <MenuItem mnemonicParsing="false" onAction="#menuTopHorarioUso" text="Top de horarios por uso" />
+            <MenuItem mnemonicParsing="false" onAction="#menuTopCarreraUso" text="Top de carreras por uso" />
+            <MenuItem mnemonicParsing="false" onAction="#menuTopSalaCalificacion" text="Top de salas por calificacion" />
         </items>
       </Menu>
         <Menu mnemonicParsing="false" text="Estudiantes">
@@ -17,18 +23,9 @@
         <Menu mnemonicParsing="false" text="Salas">
             <items>
                 <MenuItem mnemonicParsing="false" onAction="#menuAdministrarSalas" text="Administrar salas" />
+                <MenuItem mnemonicParsing="false" onAction="#menuCalificarSala" text="Calificar sala" />
             <MenuItem mnemonicParsing="false" onAction="#menuConsultarSala" text="Consultar sala" />
             <MenuItem mnemonicParsing="false" onAction="#menuReservarSala" text="Reservar sala" />
-            </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Extras">
-            <items>
-                <MenuItem mnemonicParsing="false" onAction="#menuCalificarSala" text="Calificar sala" />
-            </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Ayuda">
-            <items>
-                <MenuItem mnemonicParsing="false" text="Acerca" />
             </items>
         </Menu>
     </menus>
