@@ -70,4 +70,11 @@
         <telefono>83666575</telefono>
         <calificacion>100</calificacion>
     </estudiante>
+    <estudiante carnet="999">
+        <nombre>Esteban Esquivel</nombre>
+        <carrera>GESTION_EN_TURISMO_SOSTENIBLE</carrera>
+        <correo>eadan97@gmail.com</correo>
+        <telefono>61354759</telefono>
+        <calificacion>100</calificacion>
+    </estudiante>
 </estudiantes>

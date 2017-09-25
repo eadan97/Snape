@@ -14,7 +14,7 @@ import com.twilio.type.PhoneNumber;
 public class SMSHandler {
 
     public static final String ACCOUNT_SID = "ACdec3194c62b8b7019ecefaa24d40d61b";
-    public static final String AUTH_TOKEN = "--";
+    public static final String AUTH_TOKEN = "14c901b36cdaf85e91e24340b44bd170";
 
     /**
      * Metodo para enviar un codigo por SMS.
