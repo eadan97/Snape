@@ -6,6 +6,7 @@ import Models.Wrappers.Reservas;
 import Models.Wrappers.Salas;
 import Utils.SMSHandler;
 import Utils.Utils;
+import Models.Correo;
 import Views.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -263,8 +264,8 @@ public class SalaReservarController {
     }
 
     public boolean validarCantidadParticipantes(){
-        return (Integer.parseInt(txtCapacidad.getText())<=participantes.size()&&
-                participantes.size()<=((Sala)cBoxSala.getSelectionModel().getSelectedItem()).getCapacidadMaxima());
+        return (Integer.parseInt(txtCapacidad.getText())<=(participantes.size()+1)&&
+                (participantes.size()+1)<=((Sala)cBoxSala.getSelectionModel().getSelectedItem()).getCapacidadMaxima());
     }
 
 
@@ -274,6 +275,13 @@ public class SalaReservarController {
             Utils.mostrarError("Error","Error en los datos ingresados","Revise la cantidad de participantes ingresados!");
             return;
         }
+        if ("".equals(txtAsunto.getText())){
+            Utils.mostrarError("Error","Error en los datos ingresados","Tiene que ingresar el asunto!");
+            return;
+        }
+        btnCambiarSala.setDisable(true);
+        btnAñadirParticipantes.setDisable(true);
+        txtAsunto.setDisable(true);
 
         Reserva nueva = new Reserva(
                 txtAsunto.getText(),
@@ -288,6 +296,28 @@ public class SalaReservarController {
         try {
             SMSHandler.enviarCodigo((((Estudiante) cBoxOrganizador.getSelectionModel().getSelectedItem()).getTelefono()),nueva.getIdSala()+"-"+nueva.getId()+"-"+nueva.getIdOrganizador());
         }catch (Exception e){e.printStackTrace();}
+
+
+        String msg_correo="Sala: "+nueva.getIdSala()+
+                "\nUbicación: "+((Sala)cBoxSala.getSelectionModel().getSelectedItem()).getUbicacion()+
+                "\nFecha: "+datePicker.getValue().toString()+
+                "\nHora de inicio: "+LocalTime.of(spnHoraI.getValue(), spnMinutosI.getValue()).toString()+
+                "\nHora de finalización: "+LocalTime.of(spnHoraF.getValue(), spnMinutosF.getValue()).toString();
+        String destinatarios="";
+        for (Participante participante: participantes){
+            destinatarios+=","+participante.getCorreo();
+        }
+        if (!"".equals(destinatarios)){
+            destinatarios=destinatarios.substring(1);
+            Correo correo= new Correo(msg_correo, destinatarios);
+            correo.enviarCorreo();}
+
+
+        Correo correo_org= new Correo(msg_correo+"\nCódigo de calificación: "+nueva.getIdSala()+"-"+nueva.getId()+"-"+nueva.getIdOrganizador(), (((Estudiante) cBoxOrganizador.getSelectionModel().getSelectedItem()).getCorreo()));
+        correo_org.enviarCorreo();
+
+
+
         reservas.saveInXML();
         alCambiarDatos();
         participantes.clear();
