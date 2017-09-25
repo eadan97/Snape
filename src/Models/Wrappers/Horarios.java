@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  * Clase de horarios.
- * Esta clase sirve de contenedor de los horarios, ademas es necesaria para la JABX.
+ * Esta clase sirve de contenedor de los horarios, ademas es necesaria para la JAXB.
  *
  * @author Esteban Esquivel
  * @author Israel Herrera
@@ -31,7 +31,7 @@ public class Horarios {
     }
 
     public void setLista(ArrayList<Horario> lista) {
-        this.lista = lista;
+        Horarios.lista = lista;
     }
 
     //Terminan los Getters y Setters

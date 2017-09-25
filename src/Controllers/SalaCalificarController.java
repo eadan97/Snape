@@ -7,11 +7,22 @@ import Views.Main;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 
+/**
+ * Metodo que controla la ventana para calificar salas.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class SalaCalificarController {
 
     public TextField txtCodigo;
     public TextField txtNota;
 
+    /**
+     * Metodo para calificar la sala.
+     * @param actionEvent Boton precionado.
+     * @throws Exception
+     */
     public void calificarSala(ActionEvent actionEvent) throws Exception {
         String codigo=txtCodigo.getText();
         String nota=txtNota.getText();
@@ -40,6 +51,13 @@ public class SalaCalificarController {
         }
 }
 
+    /**
+     * Metodo para validar si el codigo es valido
+     * @param idSala Id de la sala.
+     * @param idReserva Id de la reserva.
+     * @param idEstudiante Id del estudiante.
+     * @return
+     */
     private boolean validarCodigo(String idSala, int idReserva, int idEstudiante) {
         for(Reserva reserva:Main.getInstance().reservas.getLista()){
             if (reserva.getIdSala().equals(idSala)

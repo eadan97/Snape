@@ -20,6 +20,12 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
+/**
+ * Clase controladroa de la vista para crear salas.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class SalasCrearController {
     public TableColumn tbcId;
     public TableColumn tbcUbicacion;
@@ -34,7 +40,9 @@ public class SalasCrearController {
     public static Sala sala;
     Salas salas = Main.getInstance().salas;
 
-
+    /**
+     * Metodo de inicio.
+     */
     public void initialize(){
 
         tbcId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -49,6 +57,12 @@ public class SalasCrearController {
         tbcRecursos.setCellFactory(TextFieldTableCell.forTableColumn());
         refrescarLista();
     }
+
+    /**
+     * Metodo para agregar una sala.
+     * @param actionEvent Boton precionado
+     * @throws Exception
+     */
     public void agregarSala(ActionEvent actionEvent) throws Exception {
 
         if (!Utils.validarNumero(txtCapacidad.getText())
@@ -71,13 +85,18 @@ public class SalasCrearController {
 
     }
 
-
+    /**
+     * Metodo para refrescar la lista con las salas.
+     */
     public void refrescarLista(){
         ObservableList<Sala> list = FXCollections.observableArrayList(salas.getLista());
         tblSalas.setItems(list);
     }
 
-
+    /**
+     * Metodo para llamar a la vista para obtener el horario.
+     * @throws IOException
+     */
     public void obtenerHorario() throws IOException {
         Parent root;
         try {
@@ -96,6 +115,11 @@ public class SalasCrearController {
         }
     }
 
+    /**
+     * Metodo que se llama al modificar una ubicacion en la lista de las salas.
+     * @param actionEvent Celda modificada.
+     * @throws Exception
+     */
     public void editarUbicacion(TableColumn.CellEditEvent actionEvent) throws Exception {
         for (Sala sala:
              salas.getLista()) {
@@ -105,6 +129,11 @@ public class SalasCrearController {
         salas.saveInXML();
     }
 
+    /**
+     * Metodo que se llama al modificar el estado en la lista de salas.
+     * @param cellEditEvent Celda modificada.
+     * @throws Exception
+     */
     public void editarEstado(TableColumn.CellEditEvent cellEditEvent) throws Exception{
         if (cellEditEvent.getNewValue().toString().equals("Activa")
                 ||cellEditEvent.getNewValue().toString().equals("Inactiva")
@@ -120,6 +149,11 @@ public class SalasCrearController {
         }
     }
 
+    /**
+     * Metodo que se llama al modificar los recursos en la lista de sala.
+     * @param cellEditEvent Celda modificada.
+     * @throws Exception
+     */
     public void editarRecursos(TableColumn.CellEditEvent cellEditEvent) throws Exception{
         for (Sala sala:
                 salas.getLista()) {

@@ -10,11 +10,20 @@ import javafx.scene.chart.XYChart;
 
 import java.util.*;
 
+/**
+ * Clase controladora del grafico de Sala por uso.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class GraficoSalasUsoController {
     public BarChart<String, Number> grpGrafico;
     public NumberAxis yAxis;
     public CategoryAxis xAxis;
 
+    /**
+     * Metodo de inicio.
+     */
     public void initialize(){
         xAxis.setLabel("Sala");
         yAxis.setLabel("Veces usada");

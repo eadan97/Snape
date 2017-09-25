@@ -35,7 +35,9 @@ public class CrearEstudiantesController extends MenuBarController {
     public TextField txtTelefono;
     public TextField txtCarrera;
 
-
+    /**
+     * Metodo de inicio.
+     */
     public void initialize(){
         //Se le dice a cada TableColumn que dato va a recibir de la lista
         tbcCarnet.setCellValueFactory(new PropertyValueFactory<>("carnet"));
@@ -48,7 +50,6 @@ public class CrearEstudiantesController extends MenuBarController {
         //se refresca la lista
         refrescarLista();
 
-        poblarCarreras();
 
     }
 
@@ -60,6 +61,11 @@ public class CrearEstudiantesController extends MenuBarController {
         tblEstudiantes.setItems(list);
     }
 
+    /**
+     * Metodo que se llama para agregar Estudiante
+     * @param actionEvent Boton precionado
+     * @throws Exception
+     */
     public void agregarEstudiante(ActionEvent actionEvent) throws Exception {
         if (!Utils.validarCorreo(txtCorreo.getText())
                 ||!Utils.validarNumero(txtTelefono.getText())
@@ -71,7 +77,7 @@ public class CrearEstudiantesController extends MenuBarController {
             return;
         }
 
-        Estudiante nuevo = new Estudiante(txtNombre.getText(),Integer.parseInt(txtCarnet.getText()), txtCarrera.getText().toString(),txtCorreo.getText(),Integer.parseInt(txtTelefono.getText()));
+        Estudiante nuevo = new Estudiante(txtNombre.getText(),Integer.parseInt(txtCarnet.getText()), txtCarrera.getText(),txtCorreo.getText(),Integer.parseInt(txtTelefono.getText()));
 
         txtNombre.setText("");
         txtCarnet.setText("");
@@ -84,10 +90,6 @@ public class CrearEstudiantesController extends MenuBarController {
         refrescarLista();
     }
 
-
-    private void poblarCarreras(){
-
-    }
 
 
 }

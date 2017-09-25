@@ -18,6 +18,12 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
+/**
+ * Clase que controla la vista para reservar salas.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class SalaReservarController {
     public TableView tblParticipantes;
     public TableColumn tbcNombre;
@@ -47,6 +53,9 @@ public class SalaReservarController {
     Salas salas = Main.getInstance().salas;
     Estudiantes estudiantes= Main.getInstance().estudiantes;
 
+    /**
+     * Metodo de inicio.
+     */
     public void initialize(){
         tbcNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         tbcCorreo.setCellValueFactory(new PropertyValueFactory<>("correo"));
@@ -59,8 +68,7 @@ public class SalaReservarController {
     }
 
     /**
-     * Metodo para poblar con estudiantes validos.
-     * TODO: Arreglar metodos para que funcionen.
+     * Metodo para poblar el ComboBox con estudiantes validos.
      */
     private void poblarEstudiantes() {
         for (Estudiante estudiante: estudiantes.getLista()) {
@@ -89,8 +97,8 @@ public class SalaReservarController {
     }
 
     /**
-     * Metodo que se llama cuando le da click a "Validar Datos"
-     * @param actionEvent
+     * Metodo que se llama cuando le da click a "Validar Datos".
+     * @param actionEvent Boton precionado.
      */
     public void alIngresarDatos(ActionEvent actionEvent) {
         if (!validarCamposObligatorios()){
@@ -116,6 +124,10 @@ public class SalaReservarController {
         //cBoxSala.setDisable(false);
     }
 
+    /**
+     * Metodo para agregar participantes.
+     * @param actionEvent Boton precionado.
+     */
     public void agregarParticipante(ActionEvent actionEvent) {
         if (!Utils.validarCorreo(txtCorreo.getText())
                 ||txtNombre.getText().isEmpty()){
@@ -165,8 +177,11 @@ public class SalaReservarController {
                 && cBoxOrganizador.getSelectionModel().getSelectedItem() != null;
     }
 
+    /**
+     * Metodo que se llama al escoger una sala.
+     * @param actionEvent Boton precionado.
+     */
     public void enSalaEscogida(ActionEvent actionEvent){
-        //deshabilitarDatos();
         txtNombre.setDisable(false);
         txtCorreo.setDisable(false);
         btnAñadirParticipantes.setDisable(false);
@@ -226,6 +241,9 @@ public class SalaReservarController {
         btnAñadirParticipantes.setDisable(true);
     }
 
+    /**
+     * Metodo que se llama para cambiar los datos.
+     */
     public void alCambiarDatos(){
         //participantes=new ArrayList<>();
         txtCapacidad.setDisable(false);
@@ -251,6 +269,9 @@ public class SalaReservarController {
         labIdSala.setText("ID: ");
     }
 
+    /**
+     * Metodo que se llama para poder cambiar la sala.
+     */
     public void alCambiarSala(){
         /*cBoxSala.setDisable(false);
         txtNombre.setDisable(true);
@@ -263,13 +284,20 @@ public class SalaReservarController {
         txtCorreo.clear();
     }
 
+    /**
+     * Valida la cantidad de participantes digitados.
+     * @return Boolean: Es valido?
+     */
     public boolean validarCantidadParticipantes(){
         return (Integer.parseInt(txtCapacidad.getText())<=(participantes.size()+1)&&
                 (participantes.size()+1)<=((Sala)cBoxSala.getSelectionModel().getSelectedItem()).getCapacidadMaxima());
     }
 
 
-
+    /**
+     * Metodo para crear la Reserva.
+     * @throws Exception
+     */
     public void crearReserva() throws Exception{
         if (!validarCantidadParticipantes()){
             Utils.mostrarError("Error","Error en los datos ingresados","Revise la cantidad de participantes ingresados!");

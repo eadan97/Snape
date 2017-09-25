@@ -12,6 +12,14 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import javax.rmi.CORBA.Util;
+
+/**
+ * Metodo controlador de la subventa para seleccionar los horarios de una sala.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class HorarioController {
     public Sala sala;
     public TitledPane tpnHorarios;
@@ -27,6 +35,9 @@ public class HorarioController {
     public Horarios horarios;
     public Button btnEnviar;
 
+    /**
+     * Metodo de inicio.
+     */
     public void initialize(){
         horarios=Main.getInstance().horarios;
         this.sala= SalasCrearController.sala;
@@ -40,7 +51,9 @@ public class HorarioController {
     }
 
 
-
+    /**
+     * Metodo para poblar el ComboBox de horarios.
+     */
     private void poblarHorarios(){
         for (Horario horario: horarios.getLista()) {
             cBoxHorarios.getItems().add(horario);
@@ -48,6 +61,10 @@ public class HorarioController {
         }
     }
 
+    /**
+     * Metodo para agregar horarios.
+     * @param actionEvent Boton precionado.
+     */
     public void agregarHorario(ActionEvent actionEvent) {
         if (cBoxHorarios.getValue()==null
                 ||sala.validarHorario((Horario)cBoxHorarios.getValue())){
@@ -59,15 +76,25 @@ public class HorarioController {
 
     }
 
-
+    /**
+     * Metodo cerrar la ventana
+     * @param actionEvent Boton precionado
+     * @throws Exception
+     */
     public void enviarHorario(ActionEvent actionEvent) throws Exception {
 
-        //TODO: No se puede enviar si no tiene un horario
+        if (!(sala.getAgendaServicio().size()<1)){
+            Utils.mostrarError("Error", "Error en los horarios seleccionados","Debe seleccionar al menos un horario");
+            return;
+        }
         Main.getInstance().salas.saveInXML();
         Stage stage = (Stage) btnEnviar.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Metodo para refrescar la lista de horarios seleccionados.
+     */
     public void refrescarLista(){
         ObservableList<Horario> list = FXCollections.observableArrayList(sala.getAgendaServicio());
         tblHorarios.setItems(list);

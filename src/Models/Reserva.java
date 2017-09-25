@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 /**
  * Clase de reserva.
- *
  * @author Esteban Esquivel
  * @author Israel Herrera
  * @author Israel Padilla
@@ -21,21 +20,34 @@ import java.util.ArrayList;
 @XmlType(propOrder = {"id","idSala","idOrganizador","asunto","estado","fecha","horaInicio","horaFin","participantes"})
 @XmlRootElement(name = "reserva")
 public class Reserva {
-    static int cantReservas=0;
-    int id;
-    String asunto;
-    String idSala;
-    int idOrganizador;
-    String estado;
-    ArrayList<Participante> participantes;
-    LocalDate fecha;
-    LocalTime horaInicio;
-    LocalTime horaFin;
+    private static int cantReservas=0;
+    private int id;
+    private String asunto;
+    private String idSala;
+    private int idOrganizador;
+    private String estado;
+    private ArrayList<Participante> participantes;
+    private LocalDate fecha;
+    private LocalTime horaInicio;
+    private LocalTime horaFin;
 
+    /**
+     * Constructor por defecto.
+     */
     public Reserva() {
     }
 
-
+    /**
+     * Constructor sobrecargado.
+     * @param asunto Asunto.
+     * @param idOrganizador Id del organizador.
+     * @param idSala Id de la sala.
+     * @param estado Estado.
+     * @param participantes Lista de participantes.
+     * @param fecha Fecha.
+     * @param horaInicio Hora de inicio.
+     * @param horaFin Hora de fin.
+     */
     public Reserva(String asunto, int idOrganizador, String idSala, String estado, ArrayList<Participante> participantes, LocalDate fecha, LocalTime horaInicio, LocalTime horaFin) {
         cantReservas++;
         this.id=cantReservas;

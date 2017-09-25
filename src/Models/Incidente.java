@@ -21,9 +21,19 @@ public class Incidente {
     private LocalDate fecha;
     private String detalle;
 
+    /**
+     * Constructor por defecto.
+     */
     public Incidente() {
     }
 
+    /**
+     * Constructor sobrecargado.
+     * @param tipo Tipo
+     * @param idSala Id de la sala.
+     * @param fecha Fecha.
+     * @param detalle Detalle.
+     */
     public Incidente(String tipo, String idSala, LocalDate fecha, String detalle) {
         this.tipo = tipo;
         this.idSala = idSala;

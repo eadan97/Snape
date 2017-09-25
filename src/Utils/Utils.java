@@ -1,21 +1,28 @@
 package Utils;
 
+import Models.Correo;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.Chart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 
+import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
+import javax.mail.BodyPart;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import java.time.LocalTime;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
  * Clase con metodos utiles.
- *
  * @author Esteban Esquivel
  * @author Israel Herrera
  * @author Israel Padilla
@@ -108,7 +115,13 @@ public class Utils {
     }
 
 
-
+    /**
+     * Metodo para ordenar un Map por sus Values
+     * @param map Mapa
+     * @param <K> Tipo de Keys
+     * @param <V>
+     * @return
+     */
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
         return map.entrySet()
                 .stream()
@@ -121,6 +134,12 @@ public class Utils {
                 ));
     }
 
+    /**
+     * Metodo para poblar un BarChart.
+     * @param grpGrafico BarChart.
+     * @param iterator Iterador.
+     * @param barra Nombre de la barra.
+     */
     public static void poblarChart(BarChart grpGrafico, Iterator iterator, String barra){
         int i=0;
         while (iterator.hasNext()&&i<6){
@@ -134,5 +153,6 @@ public class Utils {
             grpGrafico.getData().add(series);
         }
     }
+
 
 }

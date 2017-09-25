@@ -17,17 +17,22 @@ public class Participante {
     private String nombre;
     private String correo;
 
-    //------------FIN DE ATRIBUTOS------------//
-
+    /**
+     * Constructor por defecto.
+     */
     public Participante() {
     }
 
+    /**
+     * Constructor sobrecargado.
+     * @param nombre Nombre.
+     * @param correo Correo.
+     */
     public Participante(String nombre, String correo) {
         this.nombre = nombre;
         this.correo = correo;
     }
 
-    //------------FIN DE CONSTRUCTORES---------//
     @XmlElement
     public String getNombre() {
         return nombre;
@@ -45,8 +50,6 @@ public class Participante {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-
-    //--------------FIN DE GETTERS Y SETTERS-----------//
 
     
 }

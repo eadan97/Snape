@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  * Clase de estudiantes.
- * Esta clase sirve de contenedor de los estudiantes, ademas es necesaria para la JABX.
+ * Esta clase sirve de contenedor de los estudiantes, ademas es necesaria para la JAXB.
  *
  * @author Esteban Esquivel
  * @author Israel Herrera
@@ -31,7 +31,7 @@ public class Estudiantes {
     }
 
     public void setLista(ArrayList<Estudiante> lista) {
-        this.lista = lista;
+        Estudiantes.lista = lista;
     }
 
     //Terminan los Getters y Setters
@@ -45,6 +45,11 @@ public class Estudiantes {
             lista.add(estudiante);
     }
 
+    /**
+     * Metodo que devuelve el estudiante que tenga el id.
+     * @param id Id del estudiante buscado.
+     * @return
+     */
     public Estudiante estudiantePorId(int id){
         for (Estudiante estudiante :
                 lista) {

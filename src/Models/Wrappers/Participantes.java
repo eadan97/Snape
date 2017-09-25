@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  * Clase de participantes.
- * Esta clase sirve de contenedor de los participantes, ademas es necesaria para la JABX.
+ * Esta clase sirve de contenedor de los participantes, ademas es necesaria para la JAXB.
  *
  * @author Esteban Esquivel
  * @author Israel Herrera
@@ -31,7 +31,7 @@ public class Participantes {
     }
 
     public void setLista(ArrayList<Participante> lista) {
-        this.lista = lista;
+        Participantes.lista = lista;
     }
 
     //Terminan los Getters y Setters

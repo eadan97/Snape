@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 /**
  * Clase de reservas.
- * Esta clase sirve de contenedor de las reservas, ademas es necesaria para la JABX.
+ * Esta clase sirve de contenedor de las reservas, ademas es necesaria para la JAXB.
  *
  * @author Esteban Esquivel
  * @author Israel Herrera
@@ -34,7 +34,7 @@ public class Reservas {
     }
 
     public void setLista(ArrayList<Reserva> lista) {
-        this.lista = lista;
+        Reservas.lista = lista;
     }
 
     //Terminan los Getters y Setters
@@ -85,9 +85,10 @@ public class Reservas {
     }
 
     /**
+     * Cantidad de incidencias de un estudiante.
      * TODO:MOVER ESTO A ESTUDIANTE.
-     * @param estudiante
-     * @return
+     * @param estudiante Estudiante.
+     * @return Cantidad de incidencias.
      */
     public int cantidadIncidenciasEstudiante(Estudiante estudiante) {
         //TODO: Terminar esto

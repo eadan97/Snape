@@ -14,6 +14,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.ArrayList;
 
+/**
+ * Clase Controladora de Estudiante->Consultar Estudiante.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class EstudianteConsultarController {
     public ComboBox cBoxEstudiante;
     public TableView tblEstudiante;
@@ -38,11 +44,17 @@ public class EstudianteConsultarController {
     public TableColumn tbcReservaParticipantes;
     public Estudiante estudiante;
 
+    /**
+     * Metodo de inicio.
+     */
     public void initialize() {
         asignarFactorys();
         poblarEstudiantes();
     }
 
+    /**
+     * Metodo que asigna Factory's a cada TableColumn
+     */
     private void asignarFactorys() {
 
         tbcEstudianteCarnet.setCellValueFactory(new PropertyValueFactory<>("carnet"));
@@ -64,17 +76,27 @@ public class EstudianteConsultarController {
         tbcReservaParticipantes.setCellValueFactory(new PropertyValueFactory<>("cantidadParticipantes"));
     }
 
+    /**
+     * Metodo para poblar el ComboBox de Estudiantes
+     */
     private void poblarEstudiantes() {
         for (Estudiante sala: Main.getInstance().estudiantes.getLista()) {
             cBoxEstudiante.getItems().add(sala);
         }
     }
 
+    /**
+     * Metodo que se llama al seleccionar un estudiante.
+     * @param actionEvent Boton seleccionado.
+     */
     public void estudianteSeleccionado(ActionEvent actionEvent) {
         estudiante=(Estudiante) cBoxEstudiante.getValue();
         poblarTables();
     }
 
+    /**
+     * Metodo para poblar los TableViews
+     */
     private void poblarTables() {
         ObservableList<Estudiante> lEstudiante =FXCollections.observableArrayList(estudiante);
         ObservableList<Incidente>lIncidente=FXCollections.observableArrayList(estudiante.getIncidentes());

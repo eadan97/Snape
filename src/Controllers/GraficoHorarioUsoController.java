@@ -11,9 +11,18 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * Clase controladora del grafico de Horario por uso.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class GraficoHorarioUsoController {
     public PieChart grpGrafico;
 
+    /**
+     * Metodo de inicio.
+     */
     public void initialize(){
         /*xAxis.setLabel("Sala");
         yAxis.setLabel("Calificación");

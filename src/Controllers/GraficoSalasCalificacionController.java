@@ -12,11 +12,20 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * Metodo que controla el grafico de sala por calificacion.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class GraficoSalasCalificacionController {
     public BarChart<String, Number> grpGrafico;
     public NumberAxis yAxis;
     public CategoryAxis xAxis;
 
+    /**
+     * Metodo de inicio.
+     */
     public void initialize(){
         xAxis.setLabel("Sala");
         yAxis.setLabel("Calificación");

@@ -5,7 +5,17 @@
  */
 package Models;
 
-import Utils.MailHandler;
+import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
+import javax.mail.BodyPart;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+import java.util.Properties;
 
 /**
  * Clase de Correo.
@@ -22,7 +32,18 @@ public class Correo {
     private String asunto;
     private String mensaje;
     private String organizador;
-    
+
+    /**
+     * Constructor por defecto.
+     */
+    public Correo() {
+    }
+
+    /**
+     * Constructor Sobrecargado
+     * @param mensaje Mensaje
+     * @param destino Destino
+     */
     public Correo(String mensaje, String destino){
         setContrasenia("mzbbhdnxxcnjbxzp");
         setUsuarioCorreo("sistemabibliotecaitcr@gmail.com");
@@ -31,123 +52,114 @@ public class Correo {
         setDestinatarios(destino.trim());
         setNombreArchivo("reserva_exitosa.jpg");
         setRutaArchivo("img_correo/reserva_exitosa.jpg");
-        //setOrganizador(organizador);
     }
-    
-    public Correo(String contrasenia, String usuarioCorreo, String asunto, String mensaje, String organizador, String destino, String nombreArchivo, String rutaArchivo){
-        setContrasenia(contrasenia);
-        setUsuarioCorreo(usuarioCorreo);
-        setAsunto(asunto);
-        setMensaje(mensaje);
-        setDestinatarios(destino.trim());
-        setNombreArchivo(nombreArchivo);
-        setRutaArchivo(rutaArchivo);
-        //setOrganizador(organizador);
-    }
-    /**
-     * @return the usuarioCorreo
-     */
+
+
     public String getUsuarioCorreo() {
         return usuarioCorreo;
     }
 
-    /**
-     * @param usuarioCorreo the usuarioCorreo to set
-     */
     public void setUsuarioCorreo(String usuarioCorreo) {
         this.usuarioCorreo = usuarioCorreo;
     }
 
-    /**
-     * @return the contrasenia
-     */
+
     public String getContrasenia() {
         return contrasenia;
     }
 
-    /**
-     * @param contrasenia the contrasenia to set
-     */
+
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
 
-    /**
-     * @return the rutaArchivo
-     */
     public String getRutaArchivo() {
         return rutaArchivo;
     }
 
-    /**
-     * @param rutaArchivo the rutaArchivo to set
-     */
     public void setRutaArchivo(String rutaArchivo) {
         this.rutaArchivo = rutaArchivo;
     }
 
-    /**
-     * @return the nombreArchivo
-     */
     public String getNombreArchivo() {
         return nombreArchivo;
     }
 
-    /**
-     * @param nombreArchivo the nombreArchivo to set
-     */
     public void setNombreArchivo(String nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
     }
 
-    /**
-     * @return the destino
-     */
     public String getDestinatarios() {
         return destinatarios;
     }
 
-    /**
-     * @param destino the destino to set
-     */
     public void setDestinatarios(String destino) {
         this.destinatarios = destino;
     }
 
-    /**
-     * @return the asunto
-     */
     public String getAsunto() {
         return asunto;
     }
 
-    /**
-     * @param asunto the asunto to set
-     */
     public void setAsunto(String asunto) {
         this.asunto = asunto;
     }
 
-    /**
-     * @return the mensaje
-     */
     public String getMensaje() {
         return mensaje;
     }
 
-    /**
-     * @param mensaje the mensaje to set
-     */
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-    
-    public void enviarCorreo(){
-        MailHandler controlador=new MailHandler();
-        if (controlador.enviarCorreo(this))
-            System.out.println("Correo enviado!!!"); //cambiar por ventanas de la interfaz
-        else
-            Utils.Utils.mostrarError("Error","Error al enviar el correo","Ha sucedido un error al enviar el correo");
+
+    /**
+     * Metodo para enviar el correo.
+     * @return Boolean: Se envió?
+     */
+    public boolean enviarCorreo(){
+        try{
+            Properties p= new Properties();
+            p.put("mail.smtp.host", "smtp.gmail.com");
+            p.setProperty("mail.smtp.starttls.enable", "true");
+            p.setProperty("mail.smtp.port", "587");
+            p.setProperty("mail.smtp.user", this.getUsuarioCorreo());
+            p.setProperty("mail.smtp.auth", "true");
+
+            Session s=Session.getDefaultInstance(p,null);
+            BodyPart texto= new MimeBodyPart();
+            texto.setText(this.getMensaje());
+            BodyPart adjunto= new MimeBodyPart();
+
+            if(!this.getRutaArchivo().equals("")){
+                adjunto.setDataHandler(new DataHandler(new FileDataSource(this.getRutaArchivo())));
+                adjunto.setFileName(this.getNombreArchivo());
+            }
+            MimeMultipart m=new MimeMultipart();
+            m.addBodyPart(texto);
+
+            if(!this.getRutaArchivo().equals("")){
+                m.addBodyPart(adjunto);
+            }
+            MimeMessage mensaje= new MimeMessage(s);
+            mensaje.setFrom(new InternetAddress(this.getUsuarioCorreo()));
+            if (this.getDestinatarios().contains(","))
+                mensaje.addRecipients(Message.RecipientType.CC, InternetAddress.parse(this.getDestinatarios()));
+            else
+                mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(this.getDestinatarios()));
+            mensaje.setSubject(this.getAsunto());
+            mensaje.setContent(m);
+
+            Transport t=s.getTransport("smtp");
+            t.connect(this.getUsuarioCorreo(),this.getContrasenia());
+            t.sendMessage(mensaje, mensaje.getAllRecipients());
+            t.close();
+            return true;
+
+        }catch(Exception e){
+            System.out.print("ERROR"+e);
+            return false;
+        }
 
     }
 

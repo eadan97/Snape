@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  * Clase de salas.
- * Esta clase sirve de contenedor de los participantes, ademas es necesaria para la JABX.
+ * Esta clase sirve de contenedor de los participantes, ademas es necesaria para la JAXB.
  *
  * @author Esteban Esquivel
  * @author Israel Herrera
@@ -31,7 +31,7 @@ public class Salas {
     }
 
     public void setLista(ArrayList<Sala> lista) {
-        this.lista = lista;
+        Salas.lista = lista;
     }
 
     //Terminan los Getters y Setters

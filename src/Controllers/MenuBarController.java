@@ -4,6 +4,12 @@ package Controllers;
 import Views.Main;
 import javafx.event.ActionEvent;
 
+/**
+ * Metodo que controla la barra de navegacion.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class MenuBarController {
     public void menuAdministrarEstudiantes(ActionEvent actionEvent) {
         try {

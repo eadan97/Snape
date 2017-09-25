@@ -1,23 +1,28 @@
 package Controllers;
 
-import Models.Estudiante;
-import Models.Horario;
 import Models.Reserva;
-import Models.Sala;
 import Models.Wrappers.Estudiantes;
 import Views.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * Clase controladora del grafico de carrera por uso.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class GraficoCarreraUsoController {
     public PieChart grpGrafico;
 
+    /**
+     * Metodo de inicio.
+     */
     public void initialize(){
         Map<String, Integer> carreras=new HashMap<>();
 

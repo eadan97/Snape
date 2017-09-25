@@ -14,6 +14,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.ArrayList;
 
+/**
+ * Clase controladora de la vista para consultar vistas.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class SalasConsultarController {
     public ComboBox cBoxSalas;
     public TableView tblSalas;
@@ -43,15 +49,17 @@ public class SalasConsultarController {
     public TableColumn tbcReservaParticipantes;
     public Sala sala;
 
+    /**
+     * Metodo de inicio
+     */
     public void initialize(){
         poblarSalas();
         asignarFactorys();
-
-
-
-
     }
 
+    /**
+     * Metodo para poblar los TableViews.
+     */
     private void poblarTables() {
         ObservableList<Sala> lsala = FXCollections.observableArrayList(sala);
         ObservableList<Horario> listaHorarios = FXCollections.observableArrayList(sala.getAgendaServicio());
@@ -63,12 +71,19 @@ public class SalasConsultarController {
         tblReservas.setItems(listaReservas);
     }
 
+    /**
+     * Metodo que se llama al seleccionar una sala.
+     * @param actionEvent Boton precionado.
+     */
     public void salaSeleccionada(ActionEvent actionEvent) {
         sala=(Sala)cBoxSalas.getValue();
         poblarTables();
 
     }
 
+    /**
+     * Metodo que se llama para asignar los Factorys a cada TableColumn.
+     */
     private void asignarFactorys() {
         tbcSalasId.setCellValueFactory(new PropertyValueFactory<>("id"));
         tbcSalasUbicacion.setCellValueFactory(new PropertyValueFactory<>("ubicacion"));
@@ -95,6 +110,9 @@ public class SalasConsultarController {
 
     }
 
+    /**
+     * Metodo para poblar el ComboBox de Salas.
+     */
     private void poblarSalas() {
         for (Sala sala: Main.getInstance().salas.getLista()) {
             cBoxSalas.getItems().add(sala);

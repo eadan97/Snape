@@ -25,8 +25,17 @@ public class Horario {
     private LocalTime inicio;
     private LocalTime fin;
 
+    /**
+     * Constructor por defecto.
+     */
     public Horario() {}
 
+    /**
+     * Constructor sobrecargado.
+     * @param dia Dia.
+     * @param inicio Hora de inicio.
+     * @param fin Hora de fin.
+     */
     public Horario(DayOfWeek dia, LocalTime inicio, LocalTime fin) {
         this.dia = dia;
         this.inicio = inicio;
@@ -62,6 +71,11 @@ public class Horario {
         this.fin = fin;
     }
 
+    /**
+     * Devuelve el DIA: INICIO - FIN.
+     * El dia en español.
+     * @return String
+     */
     @Override
     public String toString() {
         return  dia.getDisplayName(TextStyle.FULL,new Locale("es", "ES")) +
@@ -69,6 +83,11 @@ public class Horario {
                 "-" + fin;
     }
 
+    /**
+     * Compara dos horarios si todos sus atributos son iguales.
+     * @param obj Objeto a comparar.
+     * @return Boolean: Son iguales?
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Horario){

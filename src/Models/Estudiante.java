@@ -25,8 +25,19 @@ public class Estudiante {
     private int calificacion=100;
     private ArrayList<Incidente> incidentes=new ArrayList<>();
 
+    /**
+     * Constructor por defecto.
+     */
     public Estudiante(){}
 
+    /**
+     * Constructor sobrecargado.
+     * @param nombre Nombre.
+     * @param carnet Carnet.
+     * @param carrera Carrera.
+     * @param correo Correo.
+     * @param telefono Telefono.
+     */
     public Estudiante(String nombre, int carnet, String carrera, String correo, int telefono) {
         this.nombre = nombre;
         this.carnet = carnet;
@@ -110,6 +121,10 @@ public class Estudiante {
         this.calificacion = calificacion;
     }
 
+    /**
+     * Devuelve NOMBRE - CARNET.
+     * @return String.
+     */
     @Override
     public String toString() {
         return nombre + " - " + carnet;

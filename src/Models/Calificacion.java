@@ -15,9 +15,17 @@ public class Calificacion {
     private int nota;
     private String codigo;
 
+    /**
+     * Constructor por defecto.
+     */
     public Calificacion() {
     }
 
+    /**
+     * Constructor sobrecargado.
+     * @param nota Nota.
+     * @param codigo Codigo.
+     */
     public Calificacion(int nota, String codigo) {
         this.nota = nota;
         this.codigo = codigo;

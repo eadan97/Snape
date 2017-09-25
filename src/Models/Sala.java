@@ -4,6 +4,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
 
+/**
+ * Clase de Sala.
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 @XmlType(propOrder = {"id","ubicacion","capacidadMaxima","recursos","estado", "calificaciones","agendaServicio"})
 public class Sala {
     private static int cantidadSalas=0;
@@ -16,6 +22,17 @@ public class Sala {
     private ArrayList<Calificacion> calificaciones =new ArrayList<>();
     private ArrayList<Horario> agendaServicio=new ArrayList<>();
 
+    /**
+     * Constructor por defecto.
+     */
+    public Sala() {}
+
+    /**
+     * Constructor sobrecargado.
+     * @param ubicacion Ubicacion.
+     * @param capacidadMaxima Capacidad maxima de la sala.
+     * @param recursos Recursos.
+     */
     public Sala( String ubicacion, int capacidadMaxima, String recursos) {
         cantidadSalas++;
         this.id = "SAL-"+cantidadSalas;
@@ -24,18 +41,29 @@ public class Sala {
         this.recursos = recursos;
     }
 
-    public Sala() {}
-
+    /**
+     * Metodo para agregar un horario.
+     * @param horario Horario a agregar.
+     */
     public void agregarHorario(Horario horario){
         if (!validarHorario(horario))
             agendaServicio.add(horario);
     }
 
+    /**
+     * Metodo para remover un horario.
+     * @param pHorario
+     */
     public void eliminarHorario(Horario pHorario){
                 agendaServicio.remove(pHorario);
 
     }
 
+    /**
+     * Metodo para ver si un horario es valido.
+     * @param pHorario Horario a validar.
+     * @return Boolean: Es valido?
+     */
     public boolean validarHorario(Horario pHorario){
         for (Horario horario : agendaServicio) {
             if (horario==pHorario)
@@ -111,7 +139,10 @@ public class Sala {
         return calificaciones;
     }
 
-
+    /**
+     * Metodo para saber el promedio de las calificaciones, o su valor por defecto (100)
+     * @return Calificacion
+     */
     public int getCalificacion() {
         if (calificaciones.isEmpty())
             return 100;
@@ -130,12 +161,22 @@ public class Sala {
         this.calificaciones = calificaciones;
     }
 
+    /**
+     * Metodo para agregar una calificacion.
+     * @param nota Nota.
+     * @param codigo Codigo.
+     */
     public void agregarCalificacion(int nota, String codigo){
         if (!existeCalificacion(codigo))
             calificaciones.add(new Calificacion(nota, codigo));
 
     }
 
+    /**
+     * Metodo para saber si ya existe esta calificacion.
+     * @param codigo Codigo de la calificacion.
+     * @return Boolean: Existe?
+     */
     public boolean existeCalificacion(String codigo) {
         for (Calificacion calificacion:calificaciones) {
             if (codigo.equals(calificacion.getCodigo()))
@@ -144,6 +185,10 @@ public class Sala {
         return false;
     }
 
+    /**
+     * Metodo que devuelve Sala ID
+     * @return String
+     */
     @Override
     public String toString() {
         return "Sala " + id;

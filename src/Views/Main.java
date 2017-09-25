@@ -10,11 +10,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Clase principal
+ * @author Esteban Esquivel
+ * @author Israel Herrera
+ * @author Israel Padilla
+ */
 public class Main extends Application {
 
     //TODO: Precargar 10 estudiantes en el XML
     //TODO: Precargar 6 horarios
-    //TODO: JAVADOC EVERYWHERE
     public Estudiantes estudiantes;
     public Salas salas;
     public Horarios horarios;
@@ -23,20 +28,35 @@ public class Main extends Application {
 
     private static Main instance;
 
+    /**
+     * Constructor por defecto.
+     */
     public Main () {
         instance=this;
     }
+
+    /**
+     * Metodo que devuelve la instancia de main.
+     * @return
+     */
     public static Main getInstance(){
         return instance;
     }
 
+    /**
+     * Metodo principal
+     * @param args Argumentos
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception{
-        //estudiantes.agregar(new Estudiante("asd",123456,"carrera","correo",12345));
         launch(args);
-
-
     }
 
+    /**
+     * Metodo que empieza la ejecucion de la aplicacion de JAVA FX.
+     * @param primaryStage Stage principal.
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
         estudiantes=new Estudiantes();
@@ -49,20 +69,20 @@ public class Main extends Application {
         horarios.loadFromXML();
         reservas.loadFromXML();
 
-
-
         stage=primaryStage;
 
         Parent root = FXMLLoader.load(getClass().getResource("/Views/JavaFX/main.fxml"));
         primaryStage.setTitle("Sistema SNAPE");
         primaryStage.setScene(new Scene(root, 800,500));
         primaryStage.show();
-
-
-
-
     }
 
+    /**
+     * Metodo para remplazar el FXML actual.
+     * @param fxml Nuevo FXML.
+     * @return Padre
+     * @throws Exception
+     */
     public Parent replaceSceneContent(String fxml) throws Exception {
         Parent page = FXMLLoader.load(getClass().getResource(fxml));
         Scene scene = stage.getScene();
@@ -78,8 +98,4 @@ public class Main extends Application {
     }
 
 
-
-
-
-
-}
+}//( ͡° ͜ʖ ͡°)
