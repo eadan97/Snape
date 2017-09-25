@@ -67,10 +67,10 @@ public class Utils {
     /**
      * Metodo que revisa si la hora del medio esta entre inicio y fin
      *
-     * @param inicio
-     * @param medio
-     * @param fin
-     * @return
+     * @param inicio Hora de inicio.
+     * @param medio Hora del medio.
+     * @param fin Hora final.
+     * @return Boolean: medio esta en el medio?
      */
     public static boolean estaEnMedio(LocalTime inicio, LocalTime medio, LocalTime fin) {
         return medio.compareTo(inicio) >= 0 && medio.compareTo(fin) <= 0;
@@ -116,11 +116,11 @@ public class Utils {
 
 
     /**
-     * Metodo para ordenar un Map por sus Values
-     * @param map Mapa
-     * @param <K> Tipo de Keys
-     * @param <V>
-     * @return
+     * Metodo para ordenar un Map por sus Values.
+     * @param map Mapa.
+     * @param <K> Tipo de Keys.
+     * @param <V> Tipo de Values.
+     * @return Mapa ordenado.
      */
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
         return map.entrySet()

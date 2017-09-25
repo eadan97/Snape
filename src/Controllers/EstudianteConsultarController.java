@@ -15,7 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.util.ArrayList;
 
 /**
- * Clase Controladora de Estudiante->Consultar Estudiante.
+ * Clase Controladora de la vista para consultar estudiantes.
  * @author Esteban Esquivel
  * @author Israel Herrera
  * @author Israel Padilla

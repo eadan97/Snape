@@ -119,7 +119,7 @@
                         <Label text="Correo" GridPane.rowIndex="1" />
                         <TextField fx:id="txtNombre" disable="true" GridPane.columnIndex="1" />
                         <TextField fx:id="txtCorreo" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Button fx:id="btnAñadirParticipantes" disable="true" mnemonicParsing="false" onAction="#agregarParticipante" text="Añadir participante" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                        <Button fx:id="btnAniadirParticipantes" disable="true" mnemonicParsing="false" onAction="#agregarParticipante" text="Añadir participante" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
                     </children>
                 </GridPane>
             </content>

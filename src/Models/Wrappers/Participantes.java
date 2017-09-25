@@ -48,7 +48,7 @@ public class Participantes {
     /**
      * Verifica si el participante tiene un CORREO diferente.
      * @param participanteVerificado Estudiante que se busca en la lista.
-     * @return
+     * @return Boolean: Es valido?
      */
     public boolean verificarEstudiante(Participante participanteVerificado){
         for (Participante participanteVerificar:

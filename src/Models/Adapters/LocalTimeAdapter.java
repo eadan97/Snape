@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.time.LocalTime;
 
 /**
- * Adaptador de String<->LocalTime requerido para el JAXB
+ * Adaptador de String-LocalTime requerido para el JAXB
  *
  * @author Esteban Esquivel
  * @author Israel Herrera

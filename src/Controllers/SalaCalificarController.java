@@ -52,11 +52,11 @@ public class SalaCalificarController {
 }
 
     /**
-     * Metodo para validar si el codigo es valido
+     * Metodo para validar si el codigo es valido.
      * @param idSala Id de la sala.
      * @param idReserva Id de la reserva.
      * @param idEstudiante Id del estudiante.
-     * @return
+     * @return Boolean: Es valido?
      */
     private boolean validarCodigo(String idSala, int idReserva, int idEstudiante) {
         for(Reserva reserva:Main.getInstance().reservas.getLista()){

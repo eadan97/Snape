@@ -41,7 +41,7 @@ public class SalaReservarController {
     public TextField txtCapacidad;
     public TextField txtRecurso;
     public Label labIdSala;
-    public Button btnAñadirParticipantes;
+    public Button btnAniadirParticipantes;
     public Button btnCrearReserva;
     public Button btnIntroducirDatos;
     public Button btnCambiarDatos;
@@ -184,7 +184,7 @@ public class SalaReservarController {
     public void enSalaEscogida(ActionEvent actionEvent){
         txtNombre.setDisable(false);
         txtCorreo.setDisable(false);
-        btnAñadirParticipantes.setDisable(false);
+        btnAniadirParticipantes.setDisable(false);
         txtAsunto.setDisable(false);
         btnCrearReserva.setDisable(false);
         cBoxSala.setDisable(true);
@@ -238,7 +238,7 @@ public class SalaReservarController {
 
         txtNombre.setDisable(true);
         txtCorreo.setDisable(true);
-        btnAñadirParticipantes.setDisable(true);
+        btnAniadirParticipantes.setDisable(true);
     }
 
     /**
@@ -258,7 +258,7 @@ public class SalaReservarController {
         txtNombre.setDisable(true);
         txtAsunto.setDisable(true);
         txtCorreo.setDisable(true);
-        btnAñadirParticipantes.setDisable(true);
+        btnAniadirParticipantes.setDisable(true);
         btnCrearReserva.setDisable(true);
         btnCambiarSala.setDisable(true);
         txtAsunto.clear();
@@ -276,7 +276,7 @@ public class SalaReservarController {
         /*cBoxSala.setDisable(false);
         txtNombre.setDisable(true);
         txtCorreo.setDisable(true);
-        btnAñadirParticipantes.setDisable(true);*/
+        btnAniadirParticipantes.setDisable(true);*/
         deshabilitarDatos();
         participantes.clear();
         refrescarLista();
@@ -308,7 +308,7 @@ public class SalaReservarController {
             return;
         }
         btnCambiarSala.setDisable(true);
-        btnAñadirParticipantes.setDisable(true);
+        btnAniadirParticipantes.setDisable(true);
         txtAsunto.setDisable(true);
         btnCrearReserva.setDisable(true);
 

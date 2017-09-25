@@ -37,7 +37,7 @@ public class Main extends Application {
 
     /**
      * Metodo que devuelve la instancia de main.
-     * @return
+     * @return instancia del main.
      */
     public static Main getInstance(){
         return instance;

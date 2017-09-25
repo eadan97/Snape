@@ -48,7 +48,7 @@ public class Estudiantes {
     /**
      * Metodo que devuelve el estudiante que tenga el id.
      * @param id Id del estudiante buscado.
-     * @return
+     * @return Estudiante o null.
      */
     public Estudiante estudiantePorId(int id){
         for (Estudiante estudiante :

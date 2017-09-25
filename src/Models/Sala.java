@@ -52,7 +52,7 @@ public class Sala {
 
     /**
      * Metodo para remover un horario.
-     * @param pHorario
+     * @param pHorario Horario a remover.
      */
     public void eliminarHorario(Horario pHorario){
                 agendaServicio.remove(pHorario);
