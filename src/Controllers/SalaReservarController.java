@@ -4,10 +4,10 @@ import Models.*;
 import Models.Wrappers.Estudiantes;
 import Models.Wrappers.Reservas;
 import Models.Wrappers.Salas;
-import Utils.SMSHandler;
 import Utils.Utils;
 import Models.Correo;
 import Views.Main;
+import com.teknikindustries.bulksms.SMS;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -282,6 +282,7 @@ public class SalaReservarController {
         btnCambiarSala.setDisable(true);
         btnAñadirParticipantes.setDisable(true);
         txtAsunto.setDisable(true);
+        btnCrearReserva.setDisable(true);
 
         Reserva nueva = new Reserva(
                 txtAsunto.getText(),
@@ -293,28 +294,38 @@ public class SalaReservarController {
                 LocalTime.of(spnHoraI.getValue(), spnMinutosI.getValue()),
                 LocalTime.of(spnHoraF.getValue(), spnMinutosF.getValue()) );
         reservas.agregar(nueva);
+
+
+
         try {
-            SMSHandler.enviarCodigo((((Estudiante) cBoxOrganizador.getSelectionModel().getSelectedItem()).getTelefono()),nueva.getIdSala()+"-"+nueva.getId()+"-"+nueva.getIdOrganizador());
-        }catch (Exception e){e.printStackTrace();}
+
+            SMS nuevoSms = new SMS();
+            nuevoSms.SendSMS("israelhercam",
+                    "prograpoo1",
+                    "Su codigo de calificacion es: "+nueva.getIdSala()+"-"+nueva.getId()+"-"+nueva.getIdOrganizador(),
+                    "506"+(((Estudiante) cBoxOrganizador.getSelectionModel().getSelectedItem()).getTelefono()) ,
+                    "https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
+
+            String msg_correo="Sala: "+nueva.getIdSala()+
+                    "\nUbicación: "+((Sala)cBoxSala.getSelectionModel().getSelectedItem()).getUbicacion()+
+                    "\nFecha: "+datePicker.getValue().toString()+
+                    "\nHora de inicio: "+LocalTime.of(spnHoraI.getValue(), spnMinutosI.getValue()).toString()+
+                    "\nHora de finalización: "+LocalTime.of(spnHoraF.getValue(), spnMinutosF.getValue()).toString();
+            String destinatarios="";
+            for (Participante participante: participantes){
+                destinatarios+=","+participante.getCorreo();
+            }
+            if (!"".equals(destinatarios)){
+                destinatarios=destinatarios.substring(1);
+                Correo correo= new Correo(msg_correo, destinatarios);
+                correo.enviarCorreo();}
 
 
-        String msg_correo="Sala: "+nueva.getIdSala()+
-                "\nUbicación: "+((Sala)cBoxSala.getSelectionModel().getSelectedItem()).getUbicacion()+
-                "\nFecha: "+datePicker.getValue().toString()+
-                "\nHora de inicio: "+LocalTime.of(spnHoraI.getValue(), spnMinutosI.getValue()).toString()+
-                "\nHora de finalización: "+LocalTime.of(spnHoraF.getValue(), spnMinutosF.getValue()).toString();
-        String destinatarios="";
-        for (Participante participante: participantes){
-            destinatarios+=","+participante.getCorreo();
+            Correo correo_org= new Correo(msg_correo+"\nCódigo de calificación: "+nueva.getIdSala()+"-"+nueva.getId()+"-"+nueva.getIdOrganizador(), (((Estudiante) cBoxOrganizador.getSelectionModel().getSelectedItem()).getCorreo()));
+            correo_org.enviarCorreo();
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        if (!"".equals(destinatarios)){
-            destinatarios=destinatarios.substring(1);
-            Correo correo= new Correo(msg_correo, destinatarios);
-            correo.enviarCorreo();}
-
-
-        Correo correo_org= new Correo(msg_correo+"\nCódigo de calificación: "+nueva.getIdSala()+"-"+nueva.getId()+"-"+nueva.getIdOrganizador(), (((Estudiante) cBoxOrganizador.getSelectionModel().getSelectedItem()).getCorreo()));
-        correo_org.enviarCorreo();
 
 
 

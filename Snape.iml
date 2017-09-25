@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/twilio-7.14.5-jar-with-dependencies.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/javax.mail.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/javax.mail.jar!/" />
+          <root url="jar://$USER_HOME$/Desktop/Bulk_SMS_Library.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

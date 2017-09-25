@@ -5,7 +5,6 @@ import Models.Horario;
 import Models.Reserva;
 import Models.Sala;
 import Models.Wrappers.Estudiantes;
-import Utils.Enums.Carrera;
 import Views.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
