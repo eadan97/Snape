@@ -49,7 +49,7 @@ public class GraficoHorarioUsoController {
 
         Iterator iterator=horarios.entrySet().iterator();
         int i=0;
-        while (iterator.hasNext()&&i<6){
+        while (iterator.hasNext()&&i<5){
             Map.Entry entry = (Map.Entry) iterator.next();
             i++;
 

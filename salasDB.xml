@@ -8,8 +8,8 @@
         <estado>Activa</estado>
         <agendaServicio>
             <dia>MONDAY</dia>
-            <inicio>09:30</inicio>
-            <fin>19:50</fin>
+            <inicio>01:00</inicio>
+            <fin>7:00</fin>
         </agendaServicio>
         <agendaServicio>
             <dia>FRIDAY</dia>

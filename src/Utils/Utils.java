@@ -142,7 +142,7 @@ public class Utils {
      */
     public static void poblarChart(BarChart grpGrafico, Iterator iterator, String barra){
         int i=0;
-        while (iterator.hasNext()&&i<6){
+        while (iterator.hasNext()&&i<5){
             Map.Entry entry = (Map.Entry) iterator.next();
             i++;
 
