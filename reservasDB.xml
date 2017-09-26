@@ -3,7 +3,7 @@
     <reserva>
         <id>1</id>
         <idSala>SAL-1</idSala>
-        <idOrganizador>999</idOrganizador>
+        <idOrganizador>2017101806</idOrganizador>
         <asunto>Holi</asunto>
         <estado>Activa</estado>
         <fecha>2017-09-25</fecha>
@@ -17,7 +17,7 @@
     <reserva>
         <id>2</id>
         <idSala>SAL-2</idSala>
-        <idOrganizador>999</idOrganizador>
+        <idOrganizador>2017101806</idOrganizador>
         <asunto>Holi</asunto>
         <estado>Activa</estado>
         <fecha>2017-09-25</fecha>

@@ -1,80 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <estudiantes>
-    <estudiante carnet="123456">
-        <nombre>Test</nombre>
-        <carrera>Compu</carrera>
-        <correo>eadan</correo>
-        <telefono>123546</telefono>
+    <estudiante carnet="2017101806">
+        <nombre>Esteban Esquivel</nombre>
+        <carrera>Computacion</carrera>
+        <correo>eadan97@gmail.com</correo>
+        <telefono>61354759</telefono>
         <calificacion>100</calificacion>
     </estudiante>
-    <estudiante carnet="1234562">
-        <nombre>Test2</nombre>
-        <carrera>Compu</carrera>
-        <correo>eadan</correo>
-        <telefono>123546</telefono>
-        <calificacion>100</calificacion>
-    </estudiante>
-    <estudiante carnet="132">
-        <nombre>sdf</nombre>
-        <carrera>ADMINISTRACION_DE_EMPRESAS</carrera>
-        <correo>sdf@sadf.com</correo>
-        <telefono>123</telefono>
-        <calificacion>100</calificacion>
-    </estudiante>
-    <estudiante carnet="1324">
-        <nombre>sdf</nombre>
-        <carrera>ADMINISTRACION_DE_EMPRESAS</carrera>
-        <correo>sdf@sadf.com</correo>
-        <telefono>123</telefono>
-        <calificacion>100</calificacion>
-    </estudiante>
-    <estudiante carnet="3221">
-        <nombre>asd</nombre>
-        <carrera>ENSENIANZA_DE_LA_MATEMATICA_CON_ENTORNOS_TECNOLOGICOS</carrera>
-        <correo>asd@asd.com</correo>
-        <telefono>321</telefono>
-        <calificacion>100</calificacion>
-    </estudiante>
-    <estudiante carnet="354">
-        <nombre>asd</nombre>
-        <carrera>ENSENIANZA_DE_LA_MATEMATICA_CON_ENTORNOS_TECNOLOGICOS</carrera>
-        <correo>asdd@asd.com</correo>
-        <telefono>6354</telefono>
-        <calificacion>100</calificacion>
-    </estudiante>
-    <estudiante carnet="123444">
-        <nombre>sf</nombre>
-        <carrera>ENSENIANZA_DE_LA_MATEMATICA_CON_ENTORNOS_TECNOLOGICOS</carrera>
-        <correo>sdf@sd.ci</correo>
-        <telefono>6874</telefono>
-        <calificacion>100</calificacion>
-    </estudiante>
-    <estudiante carnet="13223">
-        <nombre>asd</nombre>
-        <carrera>ADMINISTRACION_DE_EMPRESAS</carrera>
-        <correo>asd@asd.asd</correo>
-        <telefono>231</telefono>
-        <calificacion>100</calificacion>
-    </estudiante>
-    <estudiante carnet="98978987">
-        <nombre>sdf</nombre>
-        <carrera>ADMINISTRACION_DE_EMPRESAS</carrera>
-        <correo>asd@asd.sa</correo>
-        <telefono>654</telefono>
-        <calificacion>100</calificacion>
-    </estudiante>
-    <estudiante carnet="2017">
+    <estudiante carnet="2017080060">
         <nombre>Israel Herrera</nombre>
-        <carrera>ADMINISTRACION_DE_EMPRESAS</carrera>
-        <correo>cosa@cosa.com</correo>
+        <carrera>Computacion</carrera>
+        <correo>israelhercam@gmail.com</correo>
         <telefono>83666575</telefono>
         <calificacion>100</calificacion>
     </estudiante>
-    <estudiante carnet="999">
-        <nombre>Esteban Esquivel</nombre>
-        <carrera>GESTION_EN_TURISMO_SOSTENIBLE</carrera>
-        <correo>eadan97@gmail.com</correo>
-        <telefono>61354759</telefono>
+    <estudiante carnet="2017084185">
+        <nombre>Jefferson Lezcano</nombre>
+        <carrera>Computacion</carrera>
+        <correo>arcano50@live.com</correo>
+        <telefono>86342363</telefono>
+        <calificacion>100</calificacion>
+    </estudiante>
+    <estudiante carnet="2017111111">
+        <nombre>Perico LosPalotes</nombre>
+        <carrera>Administracion</carrera>
+        <correo>perico@lospalotes.com</correo>
+        <telefono>11111111</telefono>
+        <calificacion>100</calificacion>
+    </estudiante>
+    <estudiante carnet="2017222222">
+        <nombre>Cinthya Barboza</nombre>
+        <carrera>Forestal</carrera>
+        <correo>cibarbosa_hnp@hotmail.com</correo>
+        <telefono>88727476</telefono>
+        <calificacion>100</calificacion>
+    </estudiante>
+    <estudiante carnet="2017094702">
+        <nombre>Almudena Mora</nombre>
+        <carrera>Forestal</carrera>
+        <correo>amoraq23@gmail.com</correo>
+        <telefono>83151621</telefono>
+        <calificacion>100</calificacion>
+    </estudiante>
+    <estudiante carnet="2017333333">
+        <nombre>Jose Jimenez</nombre>
+        <carrera>Electronica</carrera>
+        <correo>jose@jimenez.com</correo>
+        <telefono>33333333</telefono>
+        <calificacion>100</calificacion>
+    </estudiante>
+    <estudiante carnet="2017444444">
+        <nombre>Pancho Villa</nombre>
+        <carrera>Demolicion</carrera>
+        <correo>pancho@kboom.com</correo>
+        <telefono>44444444</telefono>
+        <calificacion>100</calificacion>
+    </estudiante>
+    <estudiante carnet="2017555555">
+        <nombre>Miguel Aguero</nombre>
+        <carrera>Computacion</carrera>
+        <correo>miguel@aguero.es</correo>
+        <telefono>55555555</telefono>
+        <calificacion>100</calificacion>
+    </estudiante>
+    <estudiante carnet="2017666666">
+        <nombre>Doble Bestia</nombre>
+        <carrera>Pinturitas</carrera>
+        <correo>diablin@dublin.ww</correo>
+        <telefono>66666666</telefono>
         <calificacion>100</calificacion>
     </estudiante>
 </estudiantes>

@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <horarios>
     <horario>
-    <dia>MONDAY</dia>
-    <inicio>00:00</inicio>
-    <fin>01:00</fin>
-</horario>
+        <dia>MONDAY</dia>
+        <inicio>09:30</inicio>
+        <fin>19:50</fin>
+    </horario>
     <horario>
         <dia>MONDAY</dia>
-        <inicio>02:00</inicio>
-        <fin>03:00</fin>
+        <inicio>01:00</inicio>
+        <fin>07:00</fin>
+    </horario>
+    <horario>
+        <dia>FRIDAY</dia>
+        <inicio>09:30</inicio>
+        <fin>19:50</fin>
+    </horario>
+    <horario>
+        <dia>WEDNESDAY</dia>
+        <inicio>09:30</inicio>
+        <fin>19:50</fin>
+    </horario>
+    <horario>
+        <dia>THURSDAY</dia>
+        <inicio>09:30</inicio>
+        <fin>19:50</fin>
+    </horario>
+    <horario>
+        <dia>TUESDAY</dia>
+        <inicio>09:30</inicio>
+        <fin>19:50</fin>
     </horario>
 </horarios>
 

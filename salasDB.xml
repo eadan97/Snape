@@ -2,54 +2,217 @@
 <salas>
     <sala>
         <id>SAL-1</id>
-        <ubicacion>test2</ubicacion>
-        <capacidadMaxima>432</capacidadMaxima>
-        <recursos>TEST</recursos>
+        <ubicacion>Biblioteca, segundo piso</ubicacion>
+        <capacidadMaxima>40</capacidadMaxima>
+        <recursos>Escenario</recursos>
         <estado>Activa</estado>
-        <calificaciones>
-            <codigo>SAL-2-2-999</codigo>
-            <nota>100</nota>
-        </calificaciones>
-        <calificaciones>
-            <codigo>SAL-2-2-999</codigo>
-            <nota>50</nota>
-        </calificaciones>
         <agendaServicio>
             <dia>MONDAY</dia>
-            <inicio>00:00</inicio>
-            <fin>01:00</fin>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>FRIDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>WEDNESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>THURSDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>TUESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
         </agendaServicio>
     </sala>
     <sala>
         <id>SAL-2</id>
-        <ubicacion>test2</ubicacion>
-        <capacidadMaxima>432</capacidadMaxima>
-        <recursos>TEST</recursos>
+        <ubicacion>E2-08</ubicacion>
+        <capacidadMaxima>32</capacidadMaxima>
+        <recursos>Pizarra</recursos>
         <estado>Activa</estado>
-        <calificaciones>
-            <codigo>SAL-2-2-999</codigo>
-            <nota>50</nota>
-        </calificaciones>
         <agendaServicio>
             <dia>MONDAY</dia>
-            <inicio>00:00</inicio>
-            <fin>01:00</fin>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>WEDNESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>FRIDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
         </agendaServicio>
     </sala>
     <sala>
         <id>SAL-3</id>
-        <ubicacion>test2</ubicacion>
-        <capacidadMaxima>432</capacidadMaxima>
-        <recursos>TEST</recursos>
+        <ubicacion>B3-05</ubicacion>
+        <capacidadMaxima>15</capacidadMaxima>
+        <recursos>Proyector</recursos>
         <estado>Activa</estado>
-        <calificaciones>
-            <codigo>SAL-2-2-999</codigo>
-            <nota>80</nota>
-        </calificaciones>
+        <agendaServicio>
+            <dia>THURSDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>TUESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>WEDNESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+    </sala>
+    <sala>
+        <id>SAL-4</id>
+        <ubicacion>D3-01</ubicacion>
+        <capacidadMaxima>100</capacidadMaxima>
+        <recursos>Pantalla, proyector</recursos>
+        <estado>Activa</estado>
+        <agendaServicio>
+            <dia>THURSDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+    </sala>
+    <sala>
+        <id>SAL-5</id>
+        <ubicacion>Centro de las artes</ubicacion>
+        <capacidadMaxima>200</capacidadMaxima>
+        <recursos>Pantalla, proyector, escenario</recursos>
+        <estado>Activa</estado>
         <agendaServicio>
             <dia>MONDAY</dia>
-            <inicio>02:00</inicio>
-            <fin>03:00</fin>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>FRIDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>WEDNESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>THURSDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>TUESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+    </sala>
+    <sala>
+        <id>SAL-6</id>
+        <ubicacion>F1-02</ubicacion>
+        <capacidadMaxima>10</capacidadMaxima>
+        <recursos>Pizarra</recursos>
+        <estado>Activa</estado>
+        <agendaServicio>
+            <dia>MONDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>WEDNESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>FRIDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+    </sala>
+    <sala>
+        <id>SAL-7</id>
+        <ubicacion>D4-10</ubicacion>
+        <capacidadMaxima>85</capacidadMaxima>
+        <recursos>AC, Pizarra</recursos>
+        <estado>Activa</estado>
+        <agendaServicio>
+            <dia>TUESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>THURSDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>FRIDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+    </sala>
+    <sala>
+        <id>SAL-8</id>
+        <ubicacion>Biblioteca</ubicacion>
+        <capacidadMaxima>5</capacidadMaxima>
+        <recursos>Pizarra</recursos>
+        <estado>Activa</estado>
+        <agendaServicio>
+            <dia>MONDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>TUESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>WEDNESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+        <agendaServicio>
+            <dia>THURSDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+    </sala>
+    <sala>
+        <id>SAL-9</id>
+        <ubicacion>B2-13</ubicacion>
+        <capacidadMaxima>50</capacidadMaxima>
+        <recursos>Pizarra</recursos>
+        <estado>Activa</estado>
+        <agendaServicio>
+            <dia>WEDNESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
+        </agendaServicio>
+    </sala>
+    <sala>
+        <id>SAL-10</id>
+        <ubicacion>B2-14</ubicacion>
+        <capacidadMaxima>49</capacidadMaxima>
+        <recursos>Proyector</recursos>
+        <estado>Activa</estado>
+        <agendaServicio>
+            <dia>WEDNESDAY</dia>
+            <inicio>09:30</inicio>
+            <fin>19:50</fin>
         </agendaServicio>
     </sala>
 </salas>

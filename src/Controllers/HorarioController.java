@@ -83,7 +83,7 @@ public class HorarioController {
      */
     public void enviarHorario(ActionEvent actionEvent) throws Exception {
 
-        if (!(sala.getAgendaServicio().size()<1)){
+        if (sala.getAgendaServicio().size()<1){
             Utils.mostrarError("Error", "Error en los horarios seleccionados","Debe seleccionar al menos un horario");
             return;
         }

@@ -93,8 +93,8 @@ public class Horario {
         if (obj instanceof Horario){
             Horario objHorario=(Horario)obj;
             return objHorario.dia==this.dia
-                    &&objHorario.inicio==this.inicio
-                    &&objHorario.fin==this.fin;
+                    &&objHorario.inicio.equals(this.inicio)
+                    &&objHorario.fin.equals(this.fin);
         }
         return false;
     }
